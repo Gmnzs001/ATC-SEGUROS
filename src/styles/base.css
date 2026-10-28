@@ -3,4 +3,5 @@
    então eles empatam/ganham do base exatamente como no CSS de cada design. */
 @import './global.css';
 @import './inner.css';
+@import './menu.css';
 @import './motion.css';

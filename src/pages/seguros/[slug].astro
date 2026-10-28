@@ -29,7 +29,7 @@ Relacionados quebrados: ${quebrados.join(', ') || '-'}`);
 const { s } = Astro.props;
 const { abertura, cobre, naoCobre, simulador, faq, sinistro, relacionados } = s;
 ---
-<Layout title={s.titulo} here={s.menu} cotarHref="#simulador" interna waButton noindex={!s.revisado}>
+<Layout title={s.titulo} description={abertura.texto} here={s.menu} cotarHref="#simulador" interna waButton noindex={!s.revisado}>
 
 <section class="hero">
 <div class="wrap">

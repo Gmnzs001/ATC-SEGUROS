@@ -8,6 +8,9 @@ export const site = {
   cidade: 'Goiânia (GO)',
   fundacao: '1998',
 
+  // endereço do site (ex.: https://www.seudominio.com.br): usado no canonical, Open Graph, sitemap e robots
+  dominio: '[DOMÍNIO]',
+
   cnpj: '[CNPJ]',
   susep: '[NÚMERO SUSEP]',
   whatsapp: '[WHATSAPP]',
@@ -55,6 +58,9 @@ export function waLink(texto?: string, whatsapp: string = site.whatsapp): string
   const base = `https://wa.me/${numero}`;
   return texto ? `${base}?text=${encodeURIComponent(texto)}` : base;
 }
+
+/** O valor ainda é um [PLACEHOLDER]? */
+export const ehPlaceholder = (v: string) => v.startsWith('[');
 
 /** Link externo; enquanto for placeholder, fica "#" como no design. */
 export function linkOuVazio(url: string): string {

@@ -10,7 +10,9 @@ Decisões que ficaram com uma escolha provisória. Cada item diz o que foi feito
 - [ ] **Catálogo (/seguros)**: o círculo amarelo do topo cobre o botão "Quero cotar" do cabeçalho no desktop e o botão do menu (hambúrguer) no celular. É assim no design (Todos.dc.html: `.hero .sun` com `top:-180px; right:-140px`, desenhado por cima do cabeçalho). Mantive igual. Decidir se o botão deve ficar por cima do círculo.
 - [ ] **Foco no campo de busca do catálogo**: o design não tem contorno de foco pro campo (ele usa `all:unset`). Pra seguir a regra de foco visível de docs/animacoes.md, o contorno de 3px (tinta) aparece na pílula branca em volta do campo. Confirmar.
 - [ ] **Favicon**: o design não tem. Mandar o ícone (junto com o logo novo).
-- [ ] **Menu mobile (hambúrguer)**: fica pra Etapa 5, como no PROMPT.md.
+- [x] **Menu mobile (hambúrguer)**: feito na Etapa 5, opção A (tela cheia), escolhida pelo Gustavo.
+- [ ] **Domínio do site**: `dominio` em `src/config.ts` ainda é placeholder. Sem ele não sai canonical, `og:url`, nem sitemap (o robots.txt já existe).
+- [ ] **Imagem de compartilhamento (Open Graph)**: o design não tem. Sem ela, WhatsApp/Facebook mostram só título e descrição. Mandar uma imagem (ex.: logo novo em fundo amarelo).
 
 ## Placeholders
 - [ ] No simulador o selo mostrava "[NÚMERO]" e no rodapé "[NÚMERO SUSEP]". No site os dois usam o mesmo campo (`susep` em `src/config.ts`).

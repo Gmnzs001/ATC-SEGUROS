@@ -1,0 +1,43 @@
+---
+// SEO de cada página: description, canonical, Open Graph e dados estruturados (InsuranceAgency).
+// Enquanto o domínio for [PLACEHOLDER], saem sem canonical/og:url (não dá pra montar o endereço completo).
+import { site, ehPlaceholder } from '../config';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+const dominio = ehPlaceholder(site.dominio) ? null : site.dominio.replace(/\/$/, '');
+const url = dominio ? dominio + Astro.url.pathname : null;
+const real = (v: string) => (ehPlaceholder(v) ? undefined : v);
+
+const agencia = {
+  '@context': 'https://schema.org',
+  '@type': 'InsuranceAgency',
+  name: site.marca,
+  legalName: site.razaoSocial,
+  slogan: 'Seguro sem letra miúda.',
+  foundingDate: site.fundacao,
+  url: dominio ?? undefined,
+  telephone: real(site.telefone),
+  taxID: real(site.cnpj),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: real(site.endereco),
+    addressLocality: 'Goiânia',
+    addressRegion: 'GO',
+    addressCountry: 'BR',
+  },
+  areaServed: { '@type': 'City', name: 'Goiânia' },
+};
+---
+<meta name="description" content={description}>
+{url && <link rel="canonical" href={url}>}
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content={site.marca}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+{url && <meta property="og:url" content={url}>}
+<script type="application/ld+json" set:html={JSON.stringify(agencia)}></script>

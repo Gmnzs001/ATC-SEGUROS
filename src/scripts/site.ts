@@ -36,9 +36,56 @@ function parallax() {
 
 document.addEventListener('astro:page-load', parallax);
 
+// Menu mobile (opção A, tela cheia). O cabeçalho persiste entre páginas, então os eventos ficam no document.
+const menu = () => document.getElementById('menu-mobile');
+const burger = () => document.querySelector<HTMLButtonElement>('.header .wrap .burger');
+
+function abrirMenu() {
+  const m = menu();
+  if (!m) return;
+  m.hidden = false;
+  burger()?.setAttribute('aria-expanded', 'true');
+  document.documentElement.style.overflow = 'hidden';
+  m.querySelector<HTMLElement>('.mm-close')?.focus();
+}
+
+function fecharMenu(devolverFoco = true) {
+  const m = menu();
+  if (!m || m.hidden) return;
+  m.hidden = true;
+  burger()?.setAttribute('aria-expanded', 'false');
+  document.documentElement.style.overflow = '';
+  if (devolverFoco) burger()?.focus();
+}
+
+document.addEventListener('click', (e) => {
+  const t = e.target as HTMLElement;
+  if (t.closest('.header .wrap .burger')) abrirMenu();
+  else if (t.closest('.mm-close')) fecharMenu();
+  else if (t.closest('.mm a')) fecharMenu(false);
+});
+
+document.addEventListener('keydown', (e) => {
+  const m = menu();
+  if (!m || m.hidden) return;
+  if (e.key === 'Escape') { fecharMenu(); return; }
+  // Foco preso dentro do menu enquanto ele está aberto
+  if (e.key === 'Tab') {
+    const itens = [...m.querySelectorAll<HTMLElement>('a, button')];
+    const primeiro = itens[0];
+    const ultimo = itens[itens.length - 1];
+    if (e.shiftKey && document.activeElement === primeiro) { e.preventDefault(); ultimo.focus(); }
+    else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primeiro.focus(); }
+  }
+});
+
+// Se a tela crescer pro desktop com o menu aberto, libera a rolagem
+matchMedia('(min-width: 901px)').addEventListener('change', (e) => { if (e.matches) fecharMenu(false); });
+
 document.addEventListener('astro:before-swap', (e) => {
   stop?.();
   stop = null;
+  fecharMenu(false);
   // 9. O cabeçalho persiste entre páginas (transition:persist), mas o link marcado (.here)
   // e os destinos mudam por página: copia os atributos dos links do cabeçalho da página nova.
   const next = e.newDocument.querySelectorAll('header.header a');

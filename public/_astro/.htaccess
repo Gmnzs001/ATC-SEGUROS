@@ -1,0 +1,4 @@
+# Arquivos gerados pelo build (CSS, JS, fontes): o nome muda a cada build, então podem ficar em cache por 1 ano
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</IfModule>

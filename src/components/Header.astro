@@ -27,9 +27,27 @@ const cls = (k: string) => (here === k ? 'here' : undefined);
 <a class="sos" href="/sinistro">Sinistro 24h</a>
 </nav>
 <a class="pill pill-dark" href={cotarHref}>Quero cotar</a>
-<button class="burger" type="button" aria-label="Abrir menu">
+<button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg>
 </button>
+</div>
+<!-- Menu mobile (opção A, tela cheia, aprovada pelo Gustavo na Etapa 5): abre/fecha em src/scripts/site.ts -->
+<div class="mm" id="menu-mobile" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+<div class="mm-bar">
+<a class="logo" href="/"><i aria-hidden="true"></i><span style="margin-left: 8px">ATC Seguros</span></a>
+<button class="burger mm-close" type="button" aria-label="Fechar menu">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+</div>
+<nav class="mm-nav" aria-label="Principal">
+<a href="/#voce">Para você</a>
+<a href="/#empresa">Para sua empresa</a>
+<a href="/quem-somos">Quem somos</a>
+</nav>
+<div class="mm-acts">
+<a class="pill pill-yellow" href="/sinistro">Sinistro 24h</a>
+<a class="pill pill-dark" href={cotarHref}>Quero cotar</a>
+</div>
 </div>
 </header>
 )}
