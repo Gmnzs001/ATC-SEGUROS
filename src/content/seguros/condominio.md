@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro condomínio"
   titulo: "Seguro condomínio"
   texto: "Pra prédios e condomínios de casas, residenciais ou comerciais. A gente ajuda o síndico a comparar as seguradoras e entender cada cobertura antes de decidir."

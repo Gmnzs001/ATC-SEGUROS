@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Plano odontológico empresarial"
   titulo: "Plano odontológico empresarial"
   texto: "Pra empresa que quer oferecer dentista pra equipe, um benefício que todo mundo usa. A gente compara as operadoras e explica rede e carência antes de você decidir."

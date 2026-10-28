@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro pra eventos"
   titulo: "Seguro pra eventos"
   texto: "Pra quem organiza show, feira, festa, congresso ou formatura e responde pelo que acontece com o público. A gente cota, explica cada cobertura e confere se a apólice atende ao que o local pediu."

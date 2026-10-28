@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro garantia para licitação"
   titulo: "Seguro garantia para licitação"
   texto: "Pra empresa que vai disputar uma licitação em que o edital pede garantia da proposta. A gente cota nas seguradoras e confere cada exigência antes de você entregar."

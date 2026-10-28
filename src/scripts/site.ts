@@ -80,7 +80,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Se a tela crescer pro desktop com o menu aberto, libera a rolagem
-matchMedia('(min-width: 901px)').addEventListener('change', (e) => { if (e.matches) fecharMenu(false); });
+matchMedia('(min-width: 1101px)').addEventListener('change', (e) => { if (e.matches) fecharMenu(false); });
 
 document.addEventListener('astro:before-swap', (e) => {
   stop?.();

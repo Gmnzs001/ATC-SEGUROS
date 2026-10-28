@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro táxi"
   titulo: "Seguro táxi"
   texto: "Pra quem vive do táxi e não pode ficar parado. A gente acha as seguradoras que aceitam táxi e explica cada cobertura antes de você decidir."

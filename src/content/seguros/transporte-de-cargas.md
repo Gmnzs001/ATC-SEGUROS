@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro de transporte de cargas"
   titulo: "Seguro de transporte de cargas"
   texto: "Pra transportadora, caminhoneiro que leva carga de terceiros ou empresa que manda a própria mercadoria pela estrada. A gente compara as seguradoras e te explica o que cada apólice exige antes de você fechar."

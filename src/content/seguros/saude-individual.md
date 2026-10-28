@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Plano de saúde individual"
   titulo: "Plano de saúde individual"
   texto: "Pra você ou pra sua família, com uma rede de médicos e hospitais que faça sentido na sua rotina. A gente compara as operadoras e explica carência, rede e reajuste antes de você decidir."

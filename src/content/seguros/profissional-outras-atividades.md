@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro profissional para outras atividades"
   titulo: "Seguro profissional para outras atividades"
   texto: "Pra advogado, contador, engenheiro, arquiteto, consultor e quem mais presta serviço e pode ser cobrado por um erro no trabalho. A gente cota nas seguradoras que aceitam a sua profissão e explica cada cobertura antes de você decidir."

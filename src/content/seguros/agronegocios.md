@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro agronegócio"
   titulo: "Seguro agronegócio"
   texto: "Pra quem planta, cria ou tem máquinas no campo. A gente cota nas seguradoras e explica cada cobertura antes de você decidir."

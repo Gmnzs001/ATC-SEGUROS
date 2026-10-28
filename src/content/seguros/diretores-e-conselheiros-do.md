@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro D&O"
   titulo: "Seguro D&O"
   texto: "Pra sócio, diretor e conselheiro que podem responder com o próprio patrimônio por uma decisão tomada na empresa. A gente cota nas seguradoras e explica quem fica protegido e em quais casos antes de você decidir."

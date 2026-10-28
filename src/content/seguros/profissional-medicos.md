@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro profissional para médicos"
   titulo: "Seguro profissional para médicos"
   texto: "Pra quando um paciente diz que foi prejudicado no atendimento e leva o caso pra justiça. A gente compara as seguradoras e explica cada cobertura antes de você decidir."

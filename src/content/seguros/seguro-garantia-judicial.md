@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro garantia judicial"
   titulo: "Seguro garantia judicial"
   texto: "Pra empresa que tem um processo na justiça e precisa garantir o valor sem tirar dinheiro do caixa. A gente cota nas seguradoras e confere a apólice com o seu advogado."

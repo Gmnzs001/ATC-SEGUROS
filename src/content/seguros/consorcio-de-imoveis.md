@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Consórcio de imóveis"
   titulo: "Consórcio de imóveis"
   texto: "Pra quem quer comprar a casa, o apartamento ou o terreno sem pagar juros e consegue se planejar. A gente explica as regras do grupo antes de você entrar."

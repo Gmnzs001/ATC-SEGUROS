@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro de danos a terceiros"
   titulo: "Seguro de danos a terceiros"
   texto: "Pra quando a sua empresa, sem querer, causa prejuízo ou machuca alguém. A gente cota nas seguradoras e explica até onde vai cada cobertura antes de você decidir."

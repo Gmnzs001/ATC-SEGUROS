@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro risco de engenharia"
   titulo: "Seguro risco de engenharia"
   texto: "Pra construtora, empreiteira ou quem está tocando uma obra ou montando equipamentos, do começo até a entrega. A gente cota nas seguradoras e explica cada cobertura antes de você decidir."

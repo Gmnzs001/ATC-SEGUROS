@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Financiamento de veículos"
   titulo: "Financiamento de veículos"
   texto: "Pra quem precisa do carro agora e quer pagar aos poucos. A gente compara as propostas pelo custo total, não só pela parcela."

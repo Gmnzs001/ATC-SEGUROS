@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Consórcio de veículos"
   titulo: "Consórcio de veículos"
   texto: "Pra quem quer trocar ou comprar o carro sem pagar juros e não tem pressa de pegar a chave. A gente explica as regras do grupo antes de você entrar."

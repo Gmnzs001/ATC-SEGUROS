@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro profissional para dentistas"
   titulo: "Seguro profissional para dentistas"
   texto: "Pra quando um paciente não fica satisfeito com o tratamento e leva o caso pra justiça. A gente compara as seguradoras e mostra o que cada apólice cobre na sua especialidade."

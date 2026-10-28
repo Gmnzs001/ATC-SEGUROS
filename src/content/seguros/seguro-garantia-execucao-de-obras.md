@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro garantia execução de obras"
   titulo: "Seguro garantia execução de obras"
   texto: "Pra construtora com obra contratada, pública ou privada, que precisa garantir que vai entregar como combinado. A gente cota nas seguradoras e confere se a apólice segue o que o contrato pede."

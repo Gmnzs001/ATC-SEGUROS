@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Plano de saúde PET"
   titulo: "Plano de saúde PET"
   texto: "Pra cachorro e gato que fazem parte da família. A gente compara os planos e mostra o que cada um cobre antes de você decidir."

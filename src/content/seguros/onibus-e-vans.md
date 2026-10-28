@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro de ônibus e vans"
   titulo: "Seguro de ônibus e vans"
   texto: "Pra quem faz fretamento, transporte escolar, turismo ou leva funcionários. A gente cota e explica cada cobertura antes de você decidir."

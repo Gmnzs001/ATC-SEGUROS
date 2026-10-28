@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro pra cartórios"
   titulo: "Seguro pra cartórios"
   texto: "Pra tabeliães e registradores que respondem pelos erros do cartório, inclusive os da equipe. A gente compara as apólices e explica o que cada uma cobre antes de você decidir."

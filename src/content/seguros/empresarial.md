@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro empresarial"
   titulo: "Seguro empresarial"
   texto: "Pra comércio, escritório, consultório ou indústria. A gente compara as seguradoras e monta uma apólice que cabe no jeito que o seu negócio funciona."

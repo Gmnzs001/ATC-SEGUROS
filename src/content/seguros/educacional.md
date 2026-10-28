@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro educacional"
   titulo: "Seguro educacional"
   texto: "Pra escola ou faculdade que quer garantir que o aluno continue estudando se quem paga a mensalidade faltar. A gente compara as seguradoras e explica cada cobertura antes de você decidir."

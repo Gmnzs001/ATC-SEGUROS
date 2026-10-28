@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro caminhão"
   titulo: "Seguro caminhão"
   texto: "Pra caminhoneiro autônomo que vive na estrada ou empresa que depende do caminhão pra entregar. A gente compara as seguradoras que aceitam caminhão e explica cada cobertura antes de você decidir."

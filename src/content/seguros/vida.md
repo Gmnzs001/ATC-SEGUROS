@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Seguro de vida"
   titulo: "Seguro de vida"
   texto: "Pra quem tem gente que depende da sua renda ou quer se proteger de um acidente ou doença grave. A gente compara as seguradoras e explica cada cobertura antes de você decidir."

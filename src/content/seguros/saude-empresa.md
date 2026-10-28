@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Plano de saúde empresarial"
   titulo: "Plano de saúde empresarial"
   texto: "Pra empresa que quer dar plano de saúde pra equipe, ou pros sócios e a família pelo CNPJ. A gente compara as operadoras e explica carência, rede e reajuste antes de você decidir."

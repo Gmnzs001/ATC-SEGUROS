@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Seguro residencial"
   titulo: "Seguro residencial"
   texto: "Pra quem mora em casa, apartamento ou condomínio, sendo dono ou de aluguel. A gente compara as seguradoras e explica cada cobertura antes de você decidir."

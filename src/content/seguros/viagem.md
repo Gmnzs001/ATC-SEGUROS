@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Seguro viagem"
   titulo: "Seguro viagem"
   texto: "Pra viagem a passeio ou a trabalho, no Brasil ou fora. A gente compara as seguradoras e mostra o que cada plano cobre antes de você embarcar."

@@ -14,6 +14,9 @@ Decisões que ficaram com uma escolha provisória. Cada item diz o que foi feito
 - [ ] **Domínio do site**: `dominio` em `src/config.ts` ainda é placeholder. Sem ele não sai canonical, `og:url`, nem sitemap (o robots.txt já existe).
 - [ ] **Imagem de compartilhamento (Open Graph)**: o design não tem. Sem ela, WhatsApp/Facebook mostram só título e descrição. Mandar uma imagem (ex.: logo novo em fundo amarelo).
 
+- [ ] **Menu (mudança pedida pelo Gustavo)**: entrou "Todos os seguros" (/seguros); "Para você" e "Para sua empresa" abrem /seguros/para-voce e /seguros/para-sua-empresa (só os seguros daquele público, com título e texto dos cartões da home). Entre 901 e 1100px os 5 itens não cabem numa linha, então nessa faixa o cabeçalho usa o botão de menu (tela cheia), como no celular. Conferir.
+- [ ] **Quem é "você" e quem é "empresa"**: cada seguro tem `menu: voce` ou `menu: empresa` no seu .md, e isso decide em qual das duas páginas ele aparece. Hoje: 21 pra você, 30 pra empresa. Revisar casos de fronteira (ex.: Táxi, Caminhões e Condomínio estão em empresa).
+
 ## Placeholders
 - [ ] No simulador o selo mostrava "[NÚMERO]" e no rodapé "[NÚMERO SUSEP]". No site os dois usam o mesmo campo (`susep` em `src/config.ts`).
 - [ ] O botão "Ligar 24h" mostrava "[TELEFONE]" no design. No site usa o campo do telefone 24h (`[TELEFONE 24H]`, como em docs/conteudo.md).

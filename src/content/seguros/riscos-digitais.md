@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro de riscos digitais"
   titulo: "Seguro de riscos digitais"
   texto: "Pra empresa que guarda dados de clientes, vende pela internet ou simplesmente não funciona sem computador. A gente cota nas seguradoras e explica cada cobertura antes de você decidir."

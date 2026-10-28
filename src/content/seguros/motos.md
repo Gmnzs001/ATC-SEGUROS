@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Seguro moto"
   titulo: "Seguro moto"
   texto: "Pra quem vai de moto pro trabalho, faz entrega ou só roda no fim de semana. A gente compara as seguradoras que aceitam a sua moto e explica cada cobertura antes de você decidir."

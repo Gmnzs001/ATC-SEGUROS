@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Seguro aeronáutico"
   titulo: "Seguro aeronáutico"
   texto: "Pra quem tem avião, helicóptero ou ultraleve, de uso particular ou executivo. A gente cota nas seguradoras e explica cada cobertura antes de você decidir."

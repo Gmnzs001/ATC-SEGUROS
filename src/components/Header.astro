@@ -2,7 +2,7 @@
 // Cabeçalho de design/Main.dc.html (as páginas internas marcam o item atual com .here, como em design/Auto.dc.html).
 // "voltar": o cabeçalho enxuto de design/Sinistro.dc.html, só com o logo e "Voltar pro início".
 interface Props {
-  here?: 'voce' | 'empresa' | 'sobre';
+  here?: 'voce' | 'empresa' | 'todos' | 'sobre';
   cotarHref?: string;
   voltar?: boolean;
 }
@@ -21,8 +21,9 @@ const cls = (k: string) => (here === k ? 'here' : undefined);
 <div class="wrap">
 <a class="logo" href="/"><i aria-hidden="true"></i><span style="margin-left: 8px">ATC Seguros</span></a>
 <nav class="nav" aria-label="Principal">
-<a class={cls('voce')} href="/#voce">Para você</a>
-<a class={cls('empresa')} href="/#empresa">Para sua empresa</a>
+<a class={cls('voce')} href="/seguros/para-voce">Para você</a>
+<a class={cls('empresa')} href="/seguros/para-sua-empresa">Para sua empresa</a>
+<a class={cls('todos')} href="/seguros">Todos os seguros</a>
 <a class={cls('sobre')} href="/quem-somos">Quem somos</a>
 <a class="sos" href="/sinistro">Sinistro 24h</a>
 </nav>
@@ -40,8 +41,9 @@ const cls = (k: string) => (here === k ? 'here' : undefined);
 </button>
 </div>
 <nav class="mm-nav" aria-label="Principal">
-<a href="/#voce">Para você</a>
-<a href="/#empresa">Para sua empresa</a>
+<a href="/seguros/para-voce">Para você</a>
+<a href="/seguros/para-sua-empresa">Para sua empresa</a>
+<a href="/seguros">Todos os seguros</a>
 <a href="/quem-somos">Quem somos</a>
 </nav>
 <div class="mm-acts">

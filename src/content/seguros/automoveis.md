@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Seguro auto"
   titulo: "Seguro auto"
   texto: "Pra quem usa o carro todo dia, roda em aplicativo ou só sai no fim de semana. A gente cota nas maiores seguradoras e explica cada cobertura antes de você decidir."

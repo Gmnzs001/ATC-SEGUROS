@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Carta Verde"
   titulo: "Carta Verde"
   texto: "O seguro obrigatório pra rodar com o seu veículo nos países vizinhos do Mercosul. Ele paga os danos que você causar a outras pessoas lá fora, e a gente explica tudo antes da viagem."

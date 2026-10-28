@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Seguro de equipamentos de home office"
   titulo: "Seguro de equipamentos de home office"
   texto: "Pra quem trabalha de casa e depende do computador, do monitor e da impressora pra dar conta do dia. A gente compara as opções e te mostra o que o seguro da casa já cobre e o que falta."

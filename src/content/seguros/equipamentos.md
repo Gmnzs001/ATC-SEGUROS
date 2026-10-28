@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro de equipamentos"
   titulo: "Seguro de equipamentos"
   texto: "Pra máquinas e equipamentos que fazem a sua empresa rodar, dentro do galpão, na obra ou no campo. A gente compara as seguradoras e te mostra o que entra e o que fica de fora."

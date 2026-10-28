@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Fiança locatícia"
   titulo: "Fiança locatícia"
   texto: "Pra quem vai alugar e não quer pedir favor a fiador, e pra quem é dono do imóvel e quer receber em dia. A gente cota nas seguradoras e explica cada cobertura antes de você decidir."

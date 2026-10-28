@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro de frota"
   titulo: "Seguro de frota"
   texto: "Pra empresa que tem vários veículos rodando todo dia. Tudo numa apólice só, cotada em várias seguradoras e explicada antes de você decidir."

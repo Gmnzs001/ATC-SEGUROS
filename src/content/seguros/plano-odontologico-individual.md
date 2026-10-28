@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Plano odontológico individual"
   titulo: "Plano odontológico individual"
   texto: "Pra cuidar dos dentes com consulta, limpeza e tratamento na rede do plano. A gente compara as opções e mostra o que cada uma cobre antes de você decidir."

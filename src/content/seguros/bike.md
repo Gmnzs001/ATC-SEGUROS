@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Seguro bike"
   titulo: "Seguro bike"
   texto: "Pra quem pedala pro trabalho, treina na estrada ou faz trilha no fim de semana. A gente cota nas seguradoras e explica cada cobertura antes de você decidir."

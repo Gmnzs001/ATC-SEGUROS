@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Seguro de equipamentos portáteis"
   titulo: "Seguro de equipamentos portáteis"
   texto: "Pra celular, notebook, tablet, câmera e o que mais vai com você na bolsa ou na mochila. A gente compara as opções e explica o que entra antes de você decidir."

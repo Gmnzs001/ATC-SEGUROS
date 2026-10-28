@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Diária por incapacidade temporária"
   titulo: "Diária por incapacidade temporária"
   texto: "Pra quem vive do próprio trabalho e não pode ficar sem renda se precisar parar um tempo. A gente compara as seguradoras e explica cada regra antes de você decidir."

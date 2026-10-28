@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Seguro APP"
   titulo: "Seguro APP"
   texto: "APP é a proteção das pessoas que estão dentro do carro. Se alguém se machucar num acidente com ele, tem indenização, não importa de quem foi a culpa."

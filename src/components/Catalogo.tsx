@@ -8,9 +8,13 @@ const EASE = 'cubic-bezier(.2,.8,.2,1)';
 
 interface Props {
   children?: ComponentChildren;
+  // Páginas "Para você" e "Para sua empresa": só os seguros desse público, com título e texto próprios
+  titulo?: string;
+  texto?: string;
+  itens?: string[];
 }
 
-export default function Catalogo({ children }: Props) {
+export default function Catalogo({ children, titulo = 'Todos os seguros.', texto = 'Mais de 50 jeitos de proteger o que importa. Procure pelo nome ou pelo que você quer proteger.', itens }: Props) {
   const [st, setSt] = useState({ q: '', tab: 'todos' });
 
   // Animação 7: ao filtrar ou buscar, os itens se reorganizam com FLIP (200ms), sem atraso na busca
@@ -39,8 +43,9 @@ export default function Catalogo({ children }: Props) {
   }, [st]);
 
   const q = norm(st.q.trim());
-  const tabs = [{ id: 'todos', name: 'Todos' }].concat(GROUPS);
-  const groups = GROUPS.filter((g) => st.tab === 'todos' || st.tab === g.id).map((g) => {
+  const grupos = GROUPS.map((g) => ({ ...g, items: itens ? g.items.filter((n) => itens.includes(n)) : g.items })).filter((g) => g.items.length > 0);
+  const tabs = [{ id: 'todos', name: 'Todos' }].concat(grupos);
+  const groups = grupos.filter((g) => st.tab === 'todos' || st.tab === g.id).map((g) => {
     const items = g.items.filter((n) => !q || norm(n + ' ' + (EXTRA[n] || '')).indexOf(q) >= 0);
     return { id: g.id, name: g.name, desc: g.desc, count: items.length + (items.length === 1 ? ' seguro' : ' seguros'), items };
   }).filter((g) => g.items.length > 0);
@@ -50,8 +55,8 @@ export default function Catalogo({ children }: Props) {
       <section class="hero">
         <div class="sun" aria-hidden="true"></div>
         <div class="wrap" ref={root}>
-          <h1>Todos os seguros.</h1>
-          <p class="lead">Mais de 50 jeitos de proteger o que importa. Procure pelo nome ou pelo que você quer proteger.</p>
+          <h1>{titulo}</h1>
+          <p class="lead">{texto}</p>
           <div class="search">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
             <label for="busca">Buscar seguro</label>

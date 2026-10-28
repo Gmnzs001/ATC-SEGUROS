@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro de acidentes pessoais coletivo"
   titulo: "Seguro de acidentes pessoais coletivo"
   texto: "Pra empresa, associação ou evento que precisa proteger um grupo contra acidente: funcionário, estagiário, terceirizado ou participante. A gente compara as seguradoras e explica cada cobertura antes de você decidir."

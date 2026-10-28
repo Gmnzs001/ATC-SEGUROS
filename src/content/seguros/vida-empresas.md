@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro de vida pra empresas"
   titulo: "Seguro de vida pra empresas"
   texto: "Pra empresa que quer proteger a equipe e a família de cada funcionário. A gente compara as seguradoras e explica cada cobertura antes de você decidir."

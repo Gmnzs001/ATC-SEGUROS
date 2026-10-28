@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro R.E.T.A."
   titulo: "Seguro R.E.T.A."
   texto: "O seguro obrigatório de quem opera avião, helicóptero ou outra aeronave. A gente cota e explica cada parte antes de você decidir."

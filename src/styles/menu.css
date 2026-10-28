@@ -9,5 +9,11 @@
 .mm-acts{margin-top:auto;display:flex;flex-direction:column;gap:12px;padding:16px 16px 32px}
 /* o menu fica dentro do <header>, onde o design esconde .header .pill no celular: aqui elas aparecem */
 .mm .mm-acts .pill{display:inline-flex;width:100%}
-/* O menu só existe no celular: se a tela crescer com ele aberto, some */
-@media (min-width:901px){.mm{display:none}}
+/* Com "Todos os seguros" o menu tem 5 itens e não cabe numa linha entre 901 e 1100px:
+   nessa faixa o cabeçalho usa o botão de menu, como no celular */
+@media (min-width:901px) and (max-width:1100px){
+.header .nav,.header .wrap > .pill{display:none}
+.header .wrap > .burger{display:inline-flex}
+}
+/* Acima disso o menu de tela cheia não existe: se a tela crescer com ele aberto, some */
+@media (min-width:1101px){.mm{display:none}}

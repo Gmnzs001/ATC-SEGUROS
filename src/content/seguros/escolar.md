@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro escolar"
   titulo: "Seguro escolar"
   texto: "Pra escola que quer proteger os alunos contra acidente nas aulas, no recreio e nos passeios. A gente compara as seguradoras e explica cada cobertura antes de você decidir."

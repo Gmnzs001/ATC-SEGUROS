@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Previdência privada"
   titulo: "Previdência privada"
   texto: "Pra quem quer guardar dinheiro pro futuro e ainda pode ter vantagem no imposto de renda. A gente explica PGBL, VGBL e as taxas antes de você decidir."

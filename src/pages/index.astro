@@ -84,7 +84,7 @@ try { if (!sessionStorage.getItem('atc-abertura')) { sessionStorage.setItem('atc
 <div class="chips">
 {pessoal.map(([nome, href]) => <a class="chip" href={href}>{nome}</a>)}
 </div>
-<a class="more" href="/seguros">Ver todos os seguros pra você</a>
+<a class="more" href="/seguros/para-voce">Ver todos os seguros pra você</a>
 </div>
 <div class="aud aud-w" id="empresa">
 <div class="circle" aria-hidden="true"></div>
@@ -93,7 +93,7 @@ try { if (!sessionStorage.getItem('atc-abertura')) { sessionStorage.setItem('atc
 <div class="chips">
 {empresa.map(([nome, href]) => <a class="chip" href={href}>{nome}</a>)}
 </div>
-<a class="more" href="/seguros">Ver todos os seguros pra empresas</a>
+<a class="more" href="/seguros/para-sua-empresa">Ver todos os seguros pra empresas</a>
 </div>
 </div>
 </div>

@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro de vida PME"
   titulo: "Seguro de vida PME"
   texto: "Pra pequena e média empresa que quer dar um benefício de verdade pra equipe, sem a burocracia de empresa grande. A gente compara as seguradoras e explica cada cobertura antes de você decidir."

@@ -7,7 +7,7 @@ menu: empresa
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra sua empresa", href: "/seguros" }
+    - { nome: "Pra sua empresa", href: "/seguros/para-sua-empresa" }
   atual: "Seguro ambiental"
   titulo: "Seguro ambiental"
   texto: "Pra empresa que lida com combustível, produto químico, resíduo ou qualquer coisa que possa vazar e poluir. A gente cota nas seguradoras e explica cada cobertura antes de você decidir."

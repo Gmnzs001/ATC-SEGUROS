@@ -7,7 +7,7 @@ menu: voce
 abertura:
   migalhas:
     - { nome: "Início", href: "/" }
-    - { nome: "Pra você", href: "/seguros" }
+    - { nome: "Pra você", href: "/seguros/para-voce" }
   atual: "Seguro náutico"
   titulo: "Seguro náutico"
   texto: "Pra quem tem lancha, jet ski, veleiro ou barco de pesca e quer curtir a água sem preocupação. A gente cota nas seguradoras e explica cada cobertura antes de você decidir."

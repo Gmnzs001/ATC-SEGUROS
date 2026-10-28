@@ -1,0 +1,43 @@
+---
+// Página de catálogo (design/Todos.dc.html). Sem "para": todos os seguros.
+// Com "para": só os seguros daquele público (campo "menu" de cada src/content/seguros/*.md),
+// com o título e o texto do cartão correspondente da home (design/Main.dc.html).
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Catalogo from './Catalogo';
+import { GROUPS, slug } from '../data/catalogo';
+import '../styles/catalogo.css';
+
+interface Props {
+  para?: 'voce' | 'empresa';
+}
+const { para } = Astro.props;
+
+const PUBLICO = {
+  voce: { pagina: 'Para você', titulo: 'Pra você e sua família', texto: 'O carro de todo dia, a casa, a saúde e o futuro de quem você ama.' },
+  empresa: { pagina: 'Para sua empresa', titulo: 'Pra sua empresa', texto: 'Patrimônio, equipe, frota e contratos, com alguém que entende o seu negócio.' },
+};
+
+let itens: string[] | undefined;
+if (para) {
+  const doPublico = new Set((await getCollection('seguros', ({ data }) => data.menu === para)).map((s) => s.id));
+  itens = GROUPS.flatMap((g) => g.items).filter((n) => doPublico.has(slug(n)));
+}
+const p = para ? PUBLICO[para] : null;
+const title = p ? `ATC Seguros — ${p.pagina}` : 'ATC Seguros — Todos os seguros';
+const description = p ? p.texto : 'Mais de 50 jeitos de proteger o que importa. Procure pelo nome ou pelo que você quer proteger.';
+---
+<Layout title={title} description={description} here={para ?? 'todos'} interna>
+<Catalogo client:load titulo={p?.titulo} texto={p?.texto} itens={itens}>
+<div class="help">
+<div class="c" aria-hidden="true"></div>
+<div>
+<h2>Não sabe qual escolher?</h2>
+<p>Conta pra gente o que você quer proteger e a gente indica o seguro certo.</p>
+</div>
+<div class="btns">
+<a class="pill pill-white" href="/#cotar">Montar minha proteção</a>
+</div>
+</div>
+</Catalogo>
+</Layout>
