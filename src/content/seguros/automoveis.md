@@ -83,5 +83,5 @@ relacionados:
     - { nome: "Vida", href: "/seguros/vida" }
     - { nome: "Frota de veículos", href: "/seguros/frota-de-veiculos" }
     - { nome: "Proteção dos passageiros (APP)", href: "/seguros/acidentes-pessoais-passageiros-app" }
-    - { nome: "Carta Verde (viagem ao Mercosul)", href: "/seguros/carta-verde" }
+    - { nome: "Carta Verde (viagem ao Mercosul)", href: "/seguros/carta-verde-mercosul" }
 ---

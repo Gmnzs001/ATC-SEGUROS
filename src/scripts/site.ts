@@ -2,7 +2,7 @@
 
 // 4. Círculos amarelos: deslocam no máximo 40px no eixo Y conforme a rolagem, só no desktop.
 // Usa a propriedade `translate` pra somar com o `transform` que alguns círculos já têm no design.
-const CIRCLES = '.sim .blob, .sim .blob2, .aud .circle, .sos-box .sun, .final-box .c, .talk .sun, .panel-y .circle, .crash .c';
+const CIRCLES = '.sim .blob, .sim .blob2, .aud .circle, .sos-box .sun, .final-box .c, .talk .sun, .panel-y .circle, .crash .c, .hero > .sun, .help .c';
 let stop: (() => void) | null = null;
 
 function parallax() {

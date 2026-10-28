@@ -1,0 +1,6 @@
+/* CSS comum a todas as páginas, carregado SEMPRE primeiro (link manual no Layout.astro).
+   O CSS de cada página (home.css, seguro.css, catalogo.css) e o do simulador vêm depois,
+   então eles empatam/ganham do base exatamente como no CSS de cada design. */
+@import './global.css';
+@import './inner.css';
+@import './motion.css';

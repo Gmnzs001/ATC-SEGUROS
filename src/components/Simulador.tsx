@@ -173,7 +173,15 @@ export default function Simulador(props: Props) {
   // Palavra trocada na frase: cross-fade de 150ms (a antiga sai por cima enquanto a nova entra)
   const prevLabels = useRef<Record<string, string>>({});
   const labelsNow: Record<string, string> = {};
-  useLayoutEffect(() => { prevLabels.current = labelsNow; });
+  const [, setTick] = useState(0);
+  let swapped = false;
+  useLayoutEffect(() => {
+    prevLabels.current = labelsNow;
+    // Depois do fade, um novo render tira a palavra antiga do DOM (e o clip-path da pílula)
+    if (!swapped) return;
+    const id = setTimeout(() => setTick((t) => t + 1), reduced() ? 0 : 150);
+    return () => clearTimeout(id);
+  });
 
   // Índice de cada palavra/pílula pra abertura (entra uma por vez, 40ms entre cada)
   let wi = 0;
@@ -188,6 +196,7 @@ export default function Simulador(props: Props) {
       const prev = prevLabels.current[p.key];
       const changed = st.touched && prev !== undefined && prev !== p.label;
       labelsNow[p.key] = p.label;
+      if (changed) swapped = true;
       return (
         <button key={`slot-${p.key}`} class={cls} style={`--i:${wi++}`} type="button" onClick={() => set({ open: open ? null : p.key, touched: true })} aria-expanded={open ? 'true' : 'false'}>
           <span key={p.label} class={changed ? 'swap' : undefined}>{p.label}</span>

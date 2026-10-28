@@ -3,34 +3,42 @@ import { ClientRouter } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { waLink } from '../config';
-import '../styles/global.css';
-import '../styles/motion.css';
+import baseCss from '../styles/base.css?url';
 
 interface Props {
   title: string;
   here?: 'voce' | 'empresa' | 'sobre';
   cotarHref?: string;
-  compactFooter?: boolean;
+  // páginas internas: CSS de inner.css e rodapé compacto (como em design/Auto.dc.html)
+  interna?: boolean;
+  // botão flutuante do WhatsApp: está no design da Home e do Auto, não no de Todos/Sobre/Sinistro
+  waButton?: boolean;
+  // rascunho ainda não revisado pela ATC: fora do Google até a revisão
+  noindex?: boolean;
 }
-const { title, here, cotarHref, compactFooter = false } = Astro.props;
+const { title, here, cotarHref, interna = false, waButton = false, noindex = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href={baseCss}>
 <title>{title}</title>
+{noindex && <meta name="robots" content="noindex">}
 <slot name="head" />
 <ClientRouter />
 </head>
 <body>
-<div class="atc" style="width: 100%; min-height: 100vh">
+<div class:list={['atc', { interna }]} style="width: 100%; min-height: 100vh">
 <Header here={here} cotarHref={cotarHref} />
 <slot />
-<Footer compact={compactFooter} />
+<Footer compact={interna} />
+{waButton && (
 <a class="wa" href={waLink()} aria-label="Falar no WhatsApp" transition:persist="wa">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.3A8.5 8.5 0 1 1 21 12z"></path></svg>
 </a>
+)}
 </div>
 <script>
 import '../scripts/site';

@@ -1,5 +1,6 @@
-/* Páginas internas (design/Auto.dc.html, Todos, Sobre, Sinistro): o que muda em relação à base da home. */
-.atc h1,.atc h2,.atc h3{font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-0.025em;margin:0;color:#1A1A1A}
-.pill{min-height:56px}
-.footer{margin-top:96px}
-.footer .wrap{padding-top:56px;padding-bottom:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+/* Páginas internas (design/Auto.dc.html, Todos, Sobre, Sinistro): o que muda em relação à base da home.
+   Valem só dentro de <div class="atc interna">; o :where() não soma especificidade. */
+.atc:where(.interna) h1,.atc:where(.interna) h2,.atc:where(.interna) h3{font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-0.025em;margin:0;color:#1A1A1A}
+:where(.interna) .pill{min-height:56px}
+:where(.interna) .footer{margin-top:96px}
+:where(.interna) .footer .wrap{padding-top:56px;padding-bottom:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}

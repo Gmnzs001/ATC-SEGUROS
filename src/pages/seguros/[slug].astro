@@ -5,18 +5,31 @@ import Layout from '../../layouts/Layout.astro';
 import Simulador from '../../components/Simulador';
 import Faq from '../../components/Faq';
 import { site, waLink, telLink } from '../../config';
-import '../../styles/inner.css';
+import { GROUPS, slug } from '../../data/catalogo';
 import '../../styles/seguro.css';
 
 export async function getStaticPaths() {
   const seguros = await getCollection('seguros');
+  // O build quebra se faltar página pra algum item do catálogo, se sobrar arquivo fora dele
+  // ou se um relacionado apontar pra página que não existe.
+  const catalogo = new Set(GROUPS.flatMap((g) => g.items.map(slug)));
+  const ids = new Set(seguros.map((s) => s.id));
+  const faltando = [...catalogo].filter((c) => !ids.has(c));
+  const sobrando = [...ids].filter((i) => !catalogo.has(i));
+  const quebrados = seguros.flatMap((s) => s.data.relacionados.itens.filter((r) => !catalogo.has(r.href.replace('/seguros/', ''))).map((r) => `${s.id} → ${r.href}`));
+  if (faltando.length || sobrando.length || quebrados.length) {
+    throw new Error(`Catálogo e src/content/seguros não batem.
+Sem página: ${faltando.join(', ') || '-'}
+Fora do catálogo: ${sobrando.join(', ') || '-'}
+Relacionados quebrados: ${quebrados.join(', ') || '-'}`);
+  }
   return seguros.map((s) => ({ params: { slug: s.id }, props: { s: s.data } }));
 }
 
 const { s } = Astro.props;
 const { abertura, cobre, naoCobre, simulador, faq, sinistro, relacionados } = s;
 ---
-<Layout title={s.titulo} here={s.menu} cotarHref="#simulador" compactFooter>
+<Layout title={s.titulo} here={s.menu} cotarHref="#simulador" interna waButton noindex={!s.revisado}>
 
 <section class="hero">
 <div class="wrap">
@@ -60,6 +73,7 @@ const { abertura, cobre, naoCobre, simulador, faq, sinistro, relacionados } = s;
 ))}
 </ul>
 </div>
+{cobre.incluir && (
 <div class="panel panel-y">
 <div class="circle" aria-hidden="true"></div>
 <h3>{cobre.incluir.titulo}</h3>
@@ -70,6 +84,7 @@ const { abertura, cobre, naoCobre, simulador, faq, sinistro, relacionados } = s;
 ))}
 </ul>
 </div>
+)}
 </div>
 <div class="nope">
 <div>
@@ -96,6 +111,7 @@ const { abertura, cobre, naoCobre, simulador, faq, sinistro, relacionados } = s;
 </div>
 </section>
 
+{sinistro && (
 <section class="block">
 <div class="wrap">
 <div class="crash">
@@ -116,6 +132,7 @@ const { abertura, cobre, naoCobre, simulador, faq, sinistro, relacionados } = s;
 </div>
 </div>
 </section>
+)}
 
 <section class="block">
 <div class="wrap">

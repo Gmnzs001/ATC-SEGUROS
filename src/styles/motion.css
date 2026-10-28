@@ -42,19 +42,24 @@ html:not(.intro) .sim .slot.first{animation:none}
 @keyframes typing-dot{0%,100%{opacity:.3}40%{opacity:1}}
 
 /* ---------- 4. Círculos amarelos: parallax (src/scripts/parallax.ts, propriedade translate) ---------- */
-.sim .blob,.sim .blob2,.aud .circle,.sos-box .sun,.final-box .c,.talk .sun,.panel-y .circle,.crash .c{will-change:translate}
+.sim .blob,.sim .blob2,.aud .circle,.sos-box .sun,.final-box .c,.talk .sun,.panel-y .circle,.crash .c,.hero > .sun,.help .c{will-change:translate}
 
 /* ---------- 5. Botões, pílulas e links ---------- */
-.pill,.nav a,.aud .chip,.aud .more,.opt,.wa,.sim .go,.burger,.related a{transition:transform 150ms var(--curva),background-color 150ms var(--curva),color 150ms var(--curva),filter 150ms var(--curva)}
+.pill,.nav a,.aud .chip,.aud .more,.opt,.wa,.sim .go,.burger,.related a,.it,.filters .f{transition:transform 150ms var(--curva),background-color 150ms var(--curva),color 150ms var(--curva),filter 150ms var(--curva)}
 .sim .pop .chip{transition:background .2s ease,transform 150ms var(--curva)}
 /* A pílula do simulador mantém a troca de cor de 200ms do design */
 .sim .sentence .slot{transition:background .2s ease,color .2s ease,transform 150ms var(--curva),filter 150ms var(--curva)}
-.pill:hover,.nav a:hover,.aud .chip:hover,.aud .more:hover,.opt:hover,.wa:hover,.sim .go:hover,.sim .chip:hover,.burger:hover,.related a:hover{transform:translateY(-2px)}
+.pill:hover,.nav a:hover,.aud .chip:hover,.aud .more:hover,.opt:hover,.wa:hover,.sim .go:hover,.sim .chip:hover,.burger:hover,.related a:hover,.it:hover,.f:hover{transform:translateY(-2px)}
 .pill-white:hover,.wa:hover,.burger:hover,.nav a.sos:hover,.sim .sentence .slot:hover{filter:brightness(.95)}
-.pill:active,.nav a:active,.aud .chip:active,.aud .more:active,.opt:active,.wa:active,.sim .go:active,.sim .chip:active,.sim .sentence .slot:active,.burger:active,.related a:active{transform:scale(.98)}
+.pill:active,.nav a:active,.aud .chip:active,.aud .more:active,.opt:active,.wa:active,.sim .go:active,.sim .chip:active,.sim .sentence .slot:active,.burger:active,.related a:active,.it:active,.f:active{transform:scale(.98)}
 /* Foco visível: tinta em fundo claro, amarelo em fundo escuro */
 :focus-visible{outline:3px solid #1A1A1A;outline-offset:3px}
 .sos-box :focus-visible,.footer :focus-visible{outline-color:#FFD84D}
+/* Catálogo: o campo de busca usa all:unset (design), então o contorno vai na pílula em volta dele */
+.search:has(input:focus-visible){outline:3px solid #1A1A1A;outline-offset:3px}
+/* Catálogo no celular: a fileira de filtros rola na horizontal e cortaria o contorno de foco e o "sobe 2px";
+   um respiro por dentro, compensado por fora, mantém tudo no mesmo lugar */
+@media (max-width:900px){.hero .filters{padding-top:5px;margin-top:17px;padding-left:5px;margin-left:-5px}}
 
 /* ---------- 9. Entre páginas: cross-fade de 200ms (View Transitions) ---------- */
 ::view-transition-old(root),::view-transition-new(root){animation-duration:200ms;animation-timing-function:var(--curva)}
@@ -62,8 +67,8 @@ html:not(.intro) .sim .slot.first{animation:none}
 /* ---------- Movimento reduzido: só troca instantânea de estado ---------- */
 @media (prefers-reduced-motion:reduce){
 *,*::before,*::after{animation:none!important;transition:none!important}
-.pill:hover,.nav a:hover,.aud .chip:hover,.aud .more:hover,.opt:hover,.wa:hover,.sim .go:hover,.sim .chip:hover,.sim .slot:hover,.burger:hover,.related a:hover,
-.pill:active,.nav a:active,.aud .chip:active,.aud .more:active,.opt:active,.wa:active,.sim .go:active,.sim .chip:active,.sim .slot:active,.burger:active,.related a:active{transform:none!important}
+.pill:hover,.nav a:hover,.aud .chip:hover,.aud .more:hover,.opt:hover,.wa:hover,.sim .go:hover,.sim .chip:hover,.sim .slot:hover,.burger:hover,.related a:hover,.it:hover,.f:hover,
+.pill:active,.nav a:active,.aud .chip:active,.aud .more:active,.opt:active,.wa:active,.sim .go:active,.sim .chip:active,.sim .slot:active,.burger:active,.related a:active,.it:active,.f:active{transform:none!important}
 .sim .slot .old{display:none}
 .chat.armed .q,.chat.armed .a{opacity:1;transform:none}
 .typing{display:none}

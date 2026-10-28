@@ -1,0 +1,20 @@
+---
+// Catálogo: design/Todos.dc.html
+import Layout from '../../layouts/Layout.astro';
+import Catalogo from '../../components/Catalogo';
+import '../../styles/catalogo.css';
+---
+<Layout title="ATC Seguros — Todos os seguros" interna>
+<Catalogo client:load>
+<div class="help">
+<div class="c" aria-hidden="true"></div>
+<div>
+<h2>Não sabe qual escolher?</h2>
+<p>Conta pra gente o que você quer proteger e a gente indica o seguro certo.</p>
+</div>
+<div class="btns">
+<a class="pill pill-white" href="/#cotar">Montar minha proteção</a>
+</div>
+</div>
+</Catalogo>
+</Layout>
