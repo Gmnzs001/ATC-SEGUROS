@@ -1,0 +1,59 @@
+/* Quem somos: copiado de design/Sobre.dc.html (mesmos valores e ordem), sem a base comum (base.css). */
+.hero{padding:40px 0 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:56px;align-items:center}
+.hero h1{font-size:80px;line-height:0.96;font-weight:800;letter-spacing:-0.05em}
+.hero .lead{font-size:20px;line-height:1.55;color:#3F3F3F;margin-top:24px;max-width:540px}
+.photo{position:relative;aspect-ratio:1/1;border-radius:50%;background:#E9E7DF;display:flex;align-items:center;justify-content:center;text-align:center;padding:64px;box-sizing:border-box;color:#5A5A5A;font-size:16px;line-height:1.5}
+.photo .ring{position:absolute;inset:-18px;border-radius:50%;border:18px solid #FFD84D;border-right-color:transparent;border-bottom-color:transparent;transform:rotate(-20deg)}
+.block{padding:96px 0 0}
+.title{font-size:52px;line-height:1.05;font-weight:800;max-width:760px}
+.sub{font-size:19px;line-height:1.55;color:#4A4A4A;margin-top:16px;max-width:640px}
+.time{margin-top:44px;display:flex;flex-direction:column;gap:0;position:relative;max-width:860px}
+.ev{display:grid;grid-template-columns:150px 28px minmax(0,1fr);gap:20px;align-items:start;padding-bottom:36px;position:relative}
+.ev .yr{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:34px;letter-spacing:-0.03em;text-align:right;line-height:1}
+.ev .dot{width:28px;height:28px;border-radius:50%;background:#FFD84D;border:6px solid #F7F6F2;box-sizing:border-box;position:relative;z-index:1;margin-top:3px}
+.ev .line{position:absolute;left:183px;top:24px;bottom:0;border-left:3px dotted #D8D5CB}
+.ev:last-child .line{display:none}
+.ev b{display:block;font-size:20px;font-weight:700}
+.ev span.t{display:block;font-size:17px;color:#4A4A4A;line-height:1.55;margin-top:4px}
+.ev.now .yr{color:#1A1A1A}
+.ev.now .dot{background:#1A1A1A}
+.promise{margin-top:44px;position:relative;overflow:hidden;background:#FFD84D;border-radius:44px;padding:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.promise .c{position:absolute;width:380px;height:380px;border-radius:50%;background:#FFE88A;right:-120px;top:-180px}
+.promise div{position:relative}
+.promise h3{font-size:26px;font-weight:800;line-height:1.15}
+.promise p{font-size:17px;line-height:1.55;margin-top:10px;color:#2E2A12}
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:44px}
+.person{text-align:center}
+.person .ph{aspect-ratio:1/1;border-radius:50%;background:#E9E7DF;display:flex;align-items:center;justify-content:center;color:#6A6A6A;font-size:14px;padding:30px;box-sizing:border-box}
+.person b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;margin-top:18px}
+.person span{display:block;font-size:16px;color:#5A5A5A;margin-top:4px}
+.person .pill{min-height:46px;margin-top:14px;font-size:15px;padding:0 20px}
+.partners{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.partners div{flex:1 1 160px;height:72px;border-radius:999px;background:#fff;display:flex;align-items:center;justify-content:center;color:#6A6A6A;font-weight:600;font-size:14px}
+.visit{margin-top:44px;display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:24px}
+.vcard{background:#1A1A1A;color:#fff;border-radius:40px;padding:44px}
+.vcard h3{color:#fff;font-size:30px;font-weight:800}
+.vcard p{color:#D4D4D4;font-size:18px;line-height:1.6;margin-top:16px}
+.vcard .pill{margin-top:24px}
+.map{border-radius:40px;background:#E9E7DF;min-height:320px;display:flex;align-items:center;justify-content:center;color:#6A6A6A;font-size:16px}
+@media (max-width:900px){
+.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+.hero h1{font-size:46px}
+.hero .lead{font-size:17px}
+.photo{padding:40px;font-size:14px;margin:0 18px}
+.block{padding-top:64px}
+.title{font-size:34px}
+.ev{grid-template-columns:72px 24px minmax(0,1fr);gap:14px}
+.ev .yr{font-size:24px}
+.ev .dot{width:24px;height:24px}
+.ev .line{left:96px}
+.ev b{font-size:18px}
+.ev span.t{font-size:16px}
+.promise{grid-template-columns:minmax(0,1fr);padding:36px 22px;border-radius:32px;gap:24px}
+.team{grid-template-columns:minmax(0,1fr);gap:36px}
+.person .ph{max-width:240px;margin:0 auto}
+.visit{grid-template-columns:minmax(0,1fr)}
+.vcard{padding:30px 22px;border-radius:30px}
+.map{border-radius:30px;min-height:240px}
+}

@@ -42,7 +42,7 @@ html:not(.intro) .sim .slot.first{animation:none}
 @keyframes typing-dot{0%,100%{opacity:.3}40%{opacity:1}}
 
 /* ---------- 4. Círculos amarelos: parallax (src/scripts/parallax.ts, propriedade translate) ---------- */
-.sim .blob,.sim .blob2,.aud .circle,.sos-box .sun,.final-box .c,.talk .sun,.panel-y .circle,.crash .c,.hero > .sun,.help .c{will-change:translate}
+.sim .blob,.sim .blob2,.aud .circle,.sos-box .sun,.final-box .c,.talk .sun,.panel-y .circle,.crash .c,.hero > .sun,.help .c,.promise .c{will-change:translate}
 
 /* ---------- 5. Botões, pílulas e links ---------- */
 .pill,.nav a,.aud .chip,.aud .more,.opt,.wa,.sim .go,.burger,.related a,.it,.filters .f{transition:transform 150ms var(--curva),background-color 150ms var(--curva),color 150ms var(--curva),filter 150ms var(--curva)}
@@ -61,6 +61,13 @@ html:not(.intro) .sim .slot.first{animation:none}
    um respiro por dentro, compensado por fora, mantém tudo no mesmo lugar */
 @media (max-width:900px){.hero .filters{padding-top:5px;margin-top:17px;padding-left:5px;margin-left:-5px}}
 
+/* ---------- 8. Sinistro: trocar de situação faz cross-fade de 150ms nos passos. Mais nada. ---------- */
+@keyframes sin-in{from{opacity:0}to{opacity:1}}
+@keyframes sin-out{from{opacity:1}to{opacity:0}}
+.guide-x{position:relative}
+.guide-x > .guide.in{animation:sin-in 150ms var(--curva)}
+.guide-x > .guide-old{position:absolute;top:0;left:0;right:0;margin-top:0;pointer-events:none;animation:sin-out 150ms var(--curva) forwards}
+
 /* ---------- 9. Entre páginas: cross-fade de 200ms (View Transitions) ---------- */
 ::view-transition-old(root),::view-transition-new(root){animation-duration:200ms;animation-timing-function:var(--curva)}
 
@@ -73,6 +80,7 @@ html:not(.intro) .sim .slot.first{animation:none}
 .chat.armed .q,.chat.armed .a{opacity:1;transform:none}
 .typing{display:none}
 ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+.guide-old{display:none}
 }
 
 /* ---------- 6. Perguntas frequentes: altura animada (220ms); o "+" gira 45° pelo CSS do design ---------- */

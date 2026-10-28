@@ -29,15 +29,36 @@ export const site = {
     '[DEPOIMENTO REAL DE CLIENTE]',
   ],
 
-  // Home: seguradoras parceiras
-  seguradoras: ['[LOGO]', '[LOGO]', '[LOGO]', '[LOGO]', '[LOGO]', '[LOGO]'],
+  // Seguradoras parceiras: a home mostra 6 logos e o Quem somos mostra 8 (como nos designs)
+  seguradoras: ['[LOGO]', '[LOGO]', '[LOGO]', '[LOGO]', '[LOGO]', '[LOGO]', '[LOGO]', '[LOGO]'],
+
+  // Sinistro 24h: telefone 24h de cada seguradora
+  seguradoras24h: Array.from({ length: 6 }, () => ({ nome: '[SEGURADORA]', telefone: '[0800]' })),
+
+  // Quem somos
+  fotoEquipe: '[FOTO REAL DA EQUIPE NO ESCRITÓRIO]',
+  historia: [
+    { ano: '1998', titulo: 'A ATC abre as portas em Goiânia', texto: '[COMO A ATC COMEÇOU: quem fundou, onde, os primeiros clientes]' },
+    { ano: '[ANO]', titulo: '[UM MARCO DA HISTÓRIA]', texto: '[Ex.: mudança de endereço, novo tipo de seguro, cliente marcante]' },
+    { ano: '[ANO]', titulo: '[OUTRO MARCO]', texto: '[Ex.: número de clientes atendidos, parceria importante]' },
+    { ano: '2026', titulo: 'Seguro sem letra miúda', texto: 'Nova gestão, nova marca e um compromisso: explicar tudo antes de você assinar.', agora: true },
+  ],
+  equipe: Array.from({ length: 3 }, () => ({ foto: '[FOTO]', nome: '[NOME]', funcao: '[FUNÇÃO]', whatsapp: '[WHATSAPP]' })),
+  mapa: '[MAPA DO GOOGLE]',
+  // link "Como chegar" (Google Maps); enquanto for placeholder, o botão fica com "#"
+  comoChegar: '[LINK DO GOOGLE MAPS]',
 };
 
-/** Link do WhatsApp da ATC, com mensagem opcional já escrita. */
-export function waLink(texto?: string): string {
-  const numero = site.whatsapp.replace(/\D/g, '');
+/** Link do WhatsApp (da ATC ou de outro número), com mensagem opcional já escrita. */
+export function waLink(texto?: string, whatsapp: string = site.whatsapp): string {
+  const numero = whatsapp.replace(/\D/g, '');
   const base = `https://wa.me/${numero}`;
   return texto ? `${base}?text=${encodeURIComponent(texto)}` : base;
+}
+
+/** Link externo; enquanto for placeholder, fica "#" como no design. */
+export function linkOuVazio(url: string): string {
+  return url.startsWith('[') ? '#' : url;
 }
 
 /** Link pra ligar (tel:), só com os dígitos. Enquanto o número for placeholder, fica "#" como no design. */

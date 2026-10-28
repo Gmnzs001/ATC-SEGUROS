@@ -1,0 +1,75 @@
+---
+// Quem somos: design/Sobre.dc.html
+import Layout from '../layouts/Layout.astro';
+import { site, waLink, linkOuVazio } from '../config';
+import '../styles/sobre.css';
+---
+<Layout title="ATC Seguros — Quem somos" here="sobre" interna>
+
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<h1>Desde 1998, a gente cuida de Goiânia.</h1>
+<p class="lead">A ATC nasceu pra proteger famílias e empresas daqui, com atendimento de gente que conhece o cliente pelo nome. Agora começa uma nova fase: o mesmo cuidado, com um jeito novo de explicar seguro.</p>
+</div>
+<div class="photo"><span class="ring" aria-hidden="true"></span>{site.fotoEquipe}</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<h2 class="title">Uma história de quase 30 anos.</h2>
+<div class="time">
+{site.historia.map((e) => (
+<div class={e.agora ? 'ev now' : 'ev'}><span class="yr">{e.ano}</span><span class="dot" aria-hidden="true"></span><div><b>{e.titulo}</b><span class="t">{e.texto}</span></div><span class="line" aria-hidden="true"></span></div>
+))}
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<h2 class="title">O que a gente promete.</h2>
+<div class="promise">
+<div class="c" aria-hidden="true"></div>
+<div><h3>Explicar antes de vender</h3><p>Você só assina depois de entender o que cobre, o que não cobre e quanto paga se precisar usar.</p></div>
+<div><h3>Comparar de verdade</h3><p>A gente não trabalha pra uma seguradora. Trabalha pra você, e mostra as opções lado a lado.</p></div>
+<div><h3>Estar lá no pior dia</h3><p>No sinistro, você liga pra gente. A ATC resolve com a seguradora até tudo voltar ao normal.</p></div>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<h2 class="title">Quem vai cuidar de você.</h2>
+<div class="team">
+{site.equipe.map((p) => (
+<div class="person"><div class="ph">{p.foto}</div><b>{p.nome}</b><span>{p.funcao}</span><a class="pill pill-white" href={waLink(undefined, p.whatsapp)}>Chamar no WhatsApp</a></div>
+))}
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<h2 class="title">As seguradoras que a gente compara pra você.</h2>
+<div class="partners">
+{site.seguradoras.map((s) => <div>{s}</div>)}
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="visit">
+<div class="vcard">
+<h3>Passa aqui pra um café.</h3>
+<p>{site.endereco}<br>Goiânia (GO)<br><br>{site.horario}<br>{site.telefone}</p>
+<a class="pill pill-white" href={linkOuVazio(site.comoChegar)}>Como chegar</a>
+</div>
+<div class="map">{site.mapa}</div>
+</div>
+</div>
+</section>
+
+</Layout>

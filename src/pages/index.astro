@@ -47,7 +47,7 @@ try { if (!sessionStorage.getItem('atc-abertura')) { sessionStorage.setItem('atc
 <div class="wrap">
 <p>A gente compara nas maiores seguradoras do país pra você.</p>
 <div class="logos">
-{site.seguradoras.map((s) => <div class="lg">{s}</div>)}
+{site.seguradoras.slice(0, 6).map((s) => <div class="lg">{s}</div>)}
 </div>
 </div>
 </section>

@@ -15,6 +15,9 @@ Decisões que ficaram com uma escolha provisória. Cada item diz o que foi feito
 ## Placeholders
 - [ ] No simulador o selo mostrava "[NÚMERO]" e no rodapé "[NÚMERO SUSEP]". No site os dois usam o mesmo campo (`susep` em `src/config.ts`).
 - [ ] O botão "Ligar 24h" mostrava "[TELEFONE]" no design. No site usa o campo do telefone 24h (`[TELEFONE 24H]`, como em docs/conteudo.md).
+- [ ] No Quem somos o design mostra "[ENDEREÇO COMPLETO]" e "[DIAS E HORÁRIO DE ATENDIMENTO]". O site usa os mesmos campos do rodapé da home (`endereco` e `horario`), então aparece "[ENDEREÇO]" e "[HORÁRIO]". Quando chegar o dado real, mandar o endereço completo e os dias/horário.
+- [ ] Seguradoras parceiras: a home mostra 6 logos e o Quem somos 8 (como nos designs). A lista é uma só em `src/config.ts`; a home pega as 6 primeiras. Decidir quantas aparecem em cada lugar quando a lista real chegar.
+- [ ] Cada pessoa da equipe tem um campo `whatsapp` próprio. Enquanto for placeholder, o botão abre o WhatsApp sem número. "Como chegar" fica `#` até mandar o link do Google Maps.
 - [ ] Enquanto `[WHATSAPP]` for placeholder, os links abrem o WhatsApp sem número (dá pra testar a mensagem). Enquanto o telefone for placeholder, "Ligar 24h" fica com `#`.
 
 ## Links

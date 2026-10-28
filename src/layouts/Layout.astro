@@ -9,6 +9,8 @@ interface Props {
   title: string;
   here?: 'voce' | 'empresa' | 'sobre';
   cotarHref?: string;
+  // cabeçalho enxuto com "Voltar pro início" (design/Sinistro.dc.html)
+  voltar?: boolean;
   // páginas internas: CSS de inner.css e rodapé compacto (como em design/Auto.dc.html)
   interna?: boolean;
   // botão flutuante do WhatsApp: está no design da Home e do Auto, não no de Todos/Sobre/Sinistro
@@ -16,7 +18,7 @@ interface Props {
   // rascunho ainda não revisado pela ATC: fora do Google até a revisão
   noindex?: boolean;
 }
-const { title, here, cotarHref, interna = false, waButton = false, noindex = false } = Astro.props;
+const { title, here, cotarHref, voltar = false, interna = false, waButton = false, noindex = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -31,7 +33,7 @@ const { title, here, cotarHref, interna = false, waButton = false, noindex = fal
 </head>
 <body>
 <div class:list={['atc', { interna }]} style="width: 100%; min-height: 100vh">
-<Header here={here} cotarHref={cotarHref} />
+<Header here={here} cotarHref={cotarHref} voltar={voltar} />
 <slot />
 <Footer compact={interna} />
 {waButton && (
