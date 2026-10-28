@@ -1,0 +1,24 @@
+---
+// Cabeçalho de design/Main.dc.html (as páginas internas marcam o item atual com .here, como em design/Auto.dc.html)
+interface Props {
+  here?: 'voce' | 'empresa' | 'sobre';
+  cotarHref?: string;
+}
+const { here, cotarHref = '/#cotar' } = Astro.props;
+const cls = (k: string) => (here === k ? 'here' : undefined);
+---
+<header class="header" transition:persist="header">
+<div class="wrap">
+<a class="logo" href="/"><i aria-hidden="true"></i><span style="margin-left: 8px">ATC Seguros</span></a>
+<nav class="nav" aria-label="Principal">
+<a class={cls('voce')} href="/#voce">Para você</a>
+<a class={cls('empresa')} href="/#empresa">Para sua empresa</a>
+<a class={cls('sobre')} href="/quem-somos">Quem somos</a>
+<a class="sos" href="/sinistro">Sinistro 24h</a>
+</nav>
+<a class="pill pill-dark" href={cotarHref}>Quero cotar</a>
+<button class="burger" type="button" aria-label="Abrir menu">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg>
+</button>
+</div>
+</header>

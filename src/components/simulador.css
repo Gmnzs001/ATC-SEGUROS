@@ -1,0 +1,57 @@
+/* Copiado de design/Simulador.dc.html (mesmos valores e ordem).
+   Única mudança: tudo ganhou o prefixo .sim, pra não misturar com o CSS da página
+   (o h1 usa .sim .left h1 pra não herdar o letter-spacing de ".atc h1" das páginas internas). */
+.sim{position:relative;overflow:hidden;background:#fff;font-family:'Figtree',sans-serif;color:#1A1A1A;border-radius:40px;max-width:1200px;margin:0 auto;padding:56px 56px 56px 64px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) 372px;gap:48px;min-height:680px}
+.sim .blob{position:absolute;right:-180px;top:-140px;width:760px;height:760px;border-radius:50%;background:#FFD84D;z-index:0}
+.sim .blob2{position:absolute;right:320px;bottom:-280px;width:420px;height:420px;border-radius:50%;background:#FFF1B8;z-index:0}
+.sim .left{position:relative;z-index:1;display:flex;flex-direction:column;min-width:0}
+.sim .left h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:64px;line-height:0.98;letter-spacing:-0.045em;margin:0}
+.sim .intro{font-size:18px;color:#5A5A5A;margin:16px 0 24px}
+.sim .sentence{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:38px;line-height:1.42;letter-spacing:-0.022em;margin:0;color:#1A1A1A}
+.sim .slot.first{animation:nudge 1.4s ease 0.9s 2}
+@keyframes nudge{0%,100%{transform:none}25%{transform:translateY(-7px) rotate(-2deg)}50%{transform:none}}
+@media (prefers-reduced-motion:reduce){.sim .slot.first{animation:none}}
+.sim .pop{display:flex;flex-wrap:wrap;gap:8px;width:100%;margin:12px 0 16px;padding:12px;box-sizing:border-box;background:#fff;border-radius:28px;box-shadow:0 12px 32px rgba(90,70,0,0.16);font-family:'Figtree',sans-serif;letter-spacing:0;line-height:1.2;position:relative}
+.sim .trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.sim .trust span{display:inline-flex;align-items:center;gap:8px;background:#F4F4F1;border-radius:999px;padding:9px 15px;font-size:14px;font-weight:600}
+.sim .trust svg{width:16px;height:16px}
+.sim .slot{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;background:#FFD84D;border-radius:999px;padding:0 18px 4px;line-height:1.12;transition:background .2s ease,color .2s ease,transform .2s ease}
+.sim .slot:hover{transform:translateY(-2px)}
+.sim .slot:focus-visible{outline:3px solid #1A1A1A;outline-offset:3px}
+.sim .slot.on{background:#1A1A1A;color:#FFD84D}
+.sim .slot svg{width:22px;height:22px;margin-top:6px}
+.sim .chip{all:unset;cursor:pointer;display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;background:#F4F4F1;font-weight:600;font-size:17px;transition:background .2s ease}
+.sim .chip:hover{background:#FFE88A}
+.sim .chip:focus-visible{outline:3px solid #1A1A1A;outline-offset:2px}
+.sim .chip.sel{background:#1A1A1A;color:#fff}
+.sim .tip{font-size:16px;color:#6A6A6A;display:flex;align-items:center;gap:10px;margin:22px 0 0}
+.sim .tip span{display:inline-flex;width:26px;height:26px;border-radius:50%;background:#FFD84D;align-items:center;justify-content:center;font-weight:700;color:#1A1A1A;font-size:15px}
+.sim .cta{margin-top:auto;padding-top:32px;display:flex;align-items:center;gap:22px}
+.sim .go{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:62px;padding:0 30px;border-radius:999px;background:#1A1A1A;color:#fff;font-weight:700;font-size:18px;text-decoration:none;white-space:nowrap}
+.sim .go:hover{color:#fff;background:#000}
+.sim .go:focus-visible{outline:3px solid #FFD84D;outline-offset:3px}
+.sim .small{font-size:15px;color:#6A6A6A;max-width:260px;line-height:1.45;margin:0}
+.sim .panel{position:relative;z-index:1;align-self:start;background:#fff;border-radius:32px;padding:30px 28px;box-sizing:border-box;box-shadow:0 24px 60px rgba(90,70,0,0.18)}
+.sim .panel h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.02em;margin:0}
+.sim .panel .lead{font-size:15px;color:#6A6A6A;margin:6px 0 18px;line-height:1.45}
+.sim .covs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.sim .covs li{display:flex;gap:12px;align-items:flex-start}
+.sim .ck{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#FFD84D;display:inline-flex;align-items:center;justify-content:center}
+.sim .covs b{display:block;font-size:16px;font-weight:700}
+.sim .covs span.d{display:block;font-size:14px;color:#5A5A5A;line-height:1.4;margin-top:2px}
+.sim .soon{margin-top:20px;border-radius:18px;background:#F7F7F4;padding:14px 16px;font-size:13px;color:#5A5A5A;line-height:1.45}
+.sim .soon b{color:#1A1A1A}
+@media (max-width:900px){
+.sim{grid-template-columns:minmax(0,1fr);padding:32px 20px 28px;gap:28px;border-radius:28px;min-height:0}
+.sim .blob{width:420px;height:420px;right:-200px;top:-160px}
+.sim .blob2{display:none}
+.sim .left h1{font-size:40px}
+.sim .sentence{font-size:27px;line-height:1.55}
+.sim .pop{border-radius:22px;padding:10px}
+.sim .slot{padding:0 12px 3px}
+.sim .slot svg{width:16px;height:16px;margin-top:4px}
+.sim .chip{font-size:16px;min-height:44px;padding:0 18px}
+.sim .cta{flex-direction:column;align-items:stretch;gap:12px;padding-top:24px}
+.sim .small{max-width:none}
+.sim .panel{padding:24px 20px;border-radius:24px}
+}

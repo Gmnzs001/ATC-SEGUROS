@@ -1,0 +1,52 @@
+/* Base, cabeçalho, rodapé e botão do WhatsApp: copiados de design/Main.dc.html (mesmos valores e ordem). */
+@import './fonts.css';
+@import '@fontsource/figtree/latin-400.css';
+@import '@fontsource/figtree/latin-500.css';
+@import '@fontsource/figtree/latin-600.css';
+@import '@fontsource/figtree/latin-700.css';
+
+:root{
+--amarelo:#FFD84D;--amarelo-claro:#FFE88A;--amarelo-bem-claro:#FFF1B8;
+--tinta:#1A1A1A;--fundo:#F7F6F2;--branco:#FFFFFF;--superficie:#F4F4F1;
+--texto-2:#3F3F3F;--texto-3:#4A4A4A;--texto-4:#5A5A5A;--texto-5:#6A6A6A;
+--curva:cubic-bezier(.2,.8,.2,1);
+}
+
+body{margin:0;background:#F7F6F2}
+a{color:#1A1A1A}a:hover{color:#000}
+.atc{font-family:'Figtree',sans-serif;color:#1A1A1A;background:#F7F6F2;-webkit-font-smoothing:antialiased;overflow:hidden}
+.atc h2,.atc h3{font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-0.025em;margin:0;color:#1A1A1A}
+.atc p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:96px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-0.02em;text-decoration:none}
+.logo i{width:16px;height:16px;border-radius:50%;background:#1A1A1A;display:inline-block;box-shadow:6px 0 0 0 #FFD84D}
+.nav{display:flex;gap:6px;background:#fff;border-radius:999px;padding:6px}
+.nav a{text-decoration:none;font-weight:600;font-size:15px;padding:10px 18px;border-radius:999px}
+.nav a:hover{background:#F4F4F1}
+.nav a.sos{background:#FFD84D}
+.nav a.here{background:#1A1A1A;color:#fff}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;white-space:nowrap;box-sizing:border-box}
+.pill-dark{background:#1A1A1A;color:#fff}.pill-dark:hover{color:#fff;background:#000}
+.pill-yellow{background:#FFD84D;color:#1A1A1A}.pill-yellow:hover{background:#FFCF1F;color:#1A1A1A}
+.pill-white{background:#fff;color:#1A1A1A}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:0;background:#fff;align-items:center;justify-content:center}
+.footer{background:#1A1A1A;color:#BDBDBD;font-size:15px;border-radius:44px 44px 0 0}
+.footer .wrap{padding-top:64px;padding-bottom:40px}
+.f-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:40px}
+.footer h3{font-family:'Figtree',sans-serif;color:#fff;font-size:15px;font-weight:700;letter-spacing:0;margin-bottom:14px}
+.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.footer a{color:#BDBDBD;text-decoration:none}
+.footer .logo{color:#fff}
+.footer .logo i{background:#fff}
+.legal{margin-top:48px;padding-top:24px;border-top:1px solid #2E2E2E;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#8A8A8A}
+.wa{position:fixed;right:24px;bottom:24px;width:62px;height:62px;border-radius:50%;background:#1FAF52;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+@media (max-width:900px){
+.wrap{padding:0 16px}
+.header .wrap{height:76px}
+.nav,.header .pill{display:none}
+.burger{display:inline-flex}
+.footer{border-radius:32px 32px 0 0}
+.f-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.f-grid > div:first-child{grid-column:1 / -1}
+}

@@ -1,0 +1,87 @@
+/* Página de seguro: copiado de design/Auto.dc.html (mesmos valores e ordem), sem a base comum
+   (global.css + inner.css). Única mudança: ".panel" virou ".covgrid .panel" pra não pegar no card do simulador. */
+.crumbs{display:flex;gap:8px;flex-wrap:wrap;font-size:14px;color:#6A6A6A;padding-top:8px}
+.crumbs a{color:#6A6A6A}
+.hero{padding:28px 0 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.hero h1{font-size:88px;line-height:0.95;font-weight:800;letter-spacing:-0.05em}
+.hero .lead{font-size:20px;line-height:1.55;color:#3F3F3F;margin-top:24px;max-width:500px}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.talk{position:relative;min-height:440px;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:0 24px}
+.talk .sun{position:absolute;width:460px;height:460px;border-radius:50%;background:#FFD84D;left:50%;top:50%;transform:translate(-50%,-50%)}
+.q{position:relative;align-self:flex-end;background:#1A1A1A;color:#fff;border-radius:26px 26px 6px 26px;padding:16px 22px;font-weight:600;font-size:18px}
+.a{position:relative;align-self:flex-start;background:#fff;border-radius:26px 26px 26px 6px;padding:20px 22px;font-size:17px;line-height:1.5;max-width:400px;box-shadow:0 14px 34px rgba(90,70,0,0.14)}
+.a b.who{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;color:#8A7300;margin-bottom:6px;font-weight:700}
+.factors{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.factors span{background:#FFF1B8;border-radius:999px;padding:6px 12px;font-size:14px;font-weight:600}
+.block{padding:96px 0 0}
+.title{font-size:52px;line-height:1.05;font-weight:800;max-width:760px}
+.sub{font-size:19px;line-height:1.55;color:#4A4A4A;margin-top:16px;max-width:640px}
+.covgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;margin-top:44px}
+.covgrid .panel{position:relative;overflow:hidden;border-radius:40px;padding:40px;box-sizing:border-box}
+.panel-w{background:#fff}
+.panel-y{background:#FFD84D}
+.panel h3{font-size:28px;font-weight:800;position:relative}
+.panel .hint{font-size:16px;color:#4A4A4A;margin-top:6px;position:relative}
+.panel-y .hint{color:#3A3200}
+.items{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-direction:column;gap:18px;position:relative}
+.items li{display:flex;gap:14px;align-items:flex-start}
+.ck{flex-shrink:0;width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
+.panel-w .ck{background:#FFD84D}
+.panel-y .ck{background:#fff}
+.items b{display:block;font-size:18px;font-weight:700}
+.items span.d{display:block;font-size:15px;color:#4A4A4A;line-height:1.45;margin-top:3px}
+.panel-y .items span.d{color:#3A3200}
+.panel-y .circle{position:absolute;width:300px;height:300px;border-radius:50%;background:#FFE88A;right:-100px;bottom:-120px}
+.nope{margin-top:24px;background:#1A1A1A;color:#fff;border-radius:40px;padding:44px;display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:40px;align-items:start}
+.nope h3{color:#fff;font-size:32px;font-weight:800;line-height:1.12}
+.nope .hint{color:#CFCFCF;font-size:17px;line-height:1.5;margin-top:14px}
+.nolist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.nolist li{background:#2A2A2A;border-radius:24px;padding:18px 20px;font-size:15px;line-height:1.45;color:#E5E5E5}
+.nolist b{display:block;color:#fff;font-size:16px;margin-bottom:4px}
+.simwrap{padding:96px 0 0}
+.faq{margin-top:40px;display:flex;flex-direction:column;gap:10px;max-width:880px}
+.fq{background:#fff;border-radius:28px;overflow:hidden}
+.fq button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 26px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.01em}
+.fq button:focus-visible{outline:3px solid #FFD84D;outline-offset:-3px;border-radius:28px}
+.fq .plus{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#F4F4F1;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s ease,background .2s ease}
+.fq.open .plus{transform:rotate(45deg);background:#FFD84D}
+.fq .ans{padding:0 26px 24px;font-size:17px;line-height:1.6;color:#3F3F3F;max-width:720px}
+.crash{position:relative;overflow:hidden;background:#FFD84D;border-radius:44px;padding:56px;display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.crash h2{font-size:44px;line-height:1.06;font-weight:800;position:relative}
+.crash p.lead{font-size:18px;line-height:1.55;margin-top:16px;position:relative}
+.crash .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;position:relative}
+.crash .c{position:absolute;width:420px;height:420px;border-radius:50%;background:#FFE88A;left:-160px;bottom:-240px}
+.todo{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;position:relative}
+.todo li{display:flex;gap:16px;align-items:center;background:#fff;border-radius:999px;padding:12px 24px 12px 12px}
+.todo .n{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:#1A1A1A;color:#FFD84D;display:inline-flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px}
+.todo b{display:block;font-size:17px}
+.todo span.t{display:block;font-size:14px;color:#4A4A4A;margin-top:2px}
+.related{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.related a{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border-radius:999px;background:#fff;font-weight:600;font-size:16px;text-decoration:none}
+.related a:hover{background:#1A1A1A;color:#fff}
+@media (max-width:900px){
+.hero-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+.hero h1{font-size:56px}
+.hero .lead{font-size:17px}
+.hero .btns .pill{width:100%}
+.talk{min-height:0;padding:40px 0}
+.talk .sun{width:340px;height:340px}
+.q{font-size:16px}
+.a{font-size:16px}
+.block,.simwrap{padding-top:64px}
+.title{font-size:34px}
+.sub{font-size:17px}
+.covgrid{grid-template-columns:minmax(0,1fr)}
+.covgrid .panel{padding:28px 22px;border-radius:30px}
+.panel h3{font-size:24px}
+.nope{grid-template-columns:minmax(0,1fr);padding:30px 22px;border-radius:30px;gap:24px}
+.nope h3{font-size:26px}
+.nolist{grid-template-columns:minmax(0,1fr)}
+.fq button{font-size:17px;padding:18px 20px}
+.fq .ans{padding:0 20px 20px;font-size:16px}
+.crash{grid-template-columns:minmax(0,1fr);padding:36px 22px;border-radius:32px;gap:28px}
+.crash h2{font-size:32px}
+.crash .btns .pill{width:100%}
+.todo li{border-radius:26px;align-items:flex-start}
+}

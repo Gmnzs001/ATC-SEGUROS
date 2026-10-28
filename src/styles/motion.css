@@ -1,0 +1,76 @@
+/* Animações permitidas (docs/animacoes.md): 1 a 6 e 9.
+   Curva única cubic-bezier(.2,.8,.2,1), só transform e opacity (exceto a altura do card, que é FLIP). */
+
+/* ---------- 1. Abertura da home (classe .intro no <html>, só na 1ª visita da sessão) ---------- */
+@keyframes intro-up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes intro-word{from{opacity:0}to{opacity:1}}
+@keyframes intro-card{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+html.intro .sim h1{animation:intro-up 300ms var(--curva) both}
+html.intro .sim .sentence .w{animation:intro-word 200ms var(--curva) calc(200ms + var(--i) * 40ms) both}
+/* O card entra por último: 200ms depois da última palavra da frase */
+html.intro .sim .panel{animation:intro-card 300ms var(--curva) calc(200ms + var(--n) * 40ms + 200ms) both}
+/* Por fim, os 2 pulinhos da primeira pílula (keyframes "nudge" do design), depois do card */
+html.intro .sim .slot.first{animation:intro-word 200ms var(--curva) calc(200ms + var(--i) * 40ms) both,nudge 1.4s ease calc(200ms + var(--n) * 40ms + 700ms) 2}
+/* Fora da abertura (outras visitas, outras páginas) a pílula não pula */
+html:not(.intro) .sim .slot.first{animation:none}
+
+/* ---------- 2. Simulador ---------- */
+@keyframes sim-pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@keyframes sim-swap{from{opacity:0}to{opacity:1}}
+@keyframes sim-swap-out{from{opacity:1}to{opacity:0}}
+@keyframes sim-cov-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes sim-cov-out{from{opacity:1}to{opacity:0}}
+.sim .pop{transform-origin:top left;animation:sim-pop 180ms var(--curva)}
+.sim .slot .swap{animation:sim-swap 150ms var(--curva)}
+.sim .sentence .slot{position:relative}
+.sim .sentence .slot:has(.old){clip-path:inset(0 round 999px)}
+.sim .slot .old{position:absolute;left:18px;top:0;white-space:nowrap;pointer-events:none;animation:sim-swap-out 150ms var(--curva) forwards}
+@media (max-width:900px){.sim .slot .old{left:12px}}
+.sim .covs li.in{animation:sim-cov-in 220ms var(--curva) both}
+.sim .covs li.out{animation:sim-cov-out 150ms var(--curva) forwards}
+
+/* ---------- 3. "Seguro tem palavra difícil": conversas tocando como no WhatsApp ---------- */
+.chat.armed .thread{position:relative}
+.chat.armed .q,.chat.armed .a{opacity:0;transform:translateY(8px)}
+.chat .q.show,.chat .a.show{opacity:1;transform:none;transition:opacity 220ms var(--curva),transform 220ms var(--curva)}
+.typing{position:absolute;left:0;display:flex;gap:5px;align-items:center;background:#fff;border-radius:26px 26px 26px 6px;padding:18px 22px;opacity:0;transition:opacity 150ms var(--curva)}
+.typing.show{opacity:1}
+.typing i{width:8px;height:8px;border-radius:50%;background:#6A6A6A;opacity:.3}
+.typing.show i{animation:typing-dot 600ms var(--curva) both}
+.typing.show i:nth-child(2){animation-delay:150ms}
+.typing.show i:nth-child(3){animation-delay:300ms}
+@keyframes typing-dot{0%,100%{opacity:.3}40%{opacity:1}}
+
+/* ---------- 4. Círculos amarelos: parallax (src/scripts/parallax.ts, propriedade translate) ---------- */
+.sim .blob,.sim .blob2,.aud .circle,.sos-box .sun,.final-box .c,.talk .sun,.panel-y .circle,.crash .c{will-change:translate}
+
+/* ---------- 5. Botões, pílulas e links ---------- */
+.pill,.nav a,.aud .chip,.aud .more,.opt,.wa,.sim .go,.burger,.related a{transition:transform 150ms var(--curva),background-color 150ms var(--curva),color 150ms var(--curva),filter 150ms var(--curva)}
+.sim .pop .chip{transition:background .2s ease,transform 150ms var(--curva)}
+/* A pílula do simulador mantém a troca de cor de 200ms do design */
+.sim .sentence .slot{transition:background .2s ease,color .2s ease,transform 150ms var(--curva),filter 150ms var(--curva)}
+.pill:hover,.nav a:hover,.aud .chip:hover,.aud .more:hover,.opt:hover,.wa:hover,.sim .go:hover,.sim .chip:hover,.burger:hover,.related a:hover{transform:translateY(-2px)}
+.pill-white:hover,.wa:hover,.burger:hover,.nav a.sos:hover,.sim .sentence .slot:hover{filter:brightness(.95)}
+.pill:active,.nav a:active,.aud .chip:active,.aud .more:active,.opt:active,.wa:active,.sim .go:active,.sim .chip:active,.sim .sentence .slot:active,.burger:active,.related a:active{transform:scale(.98)}
+/* Foco visível: tinta em fundo claro, amarelo em fundo escuro */
+:focus-visible{outline:3px solid #1A1A1A;outline-offset:3px}
+.sos-box :focus-visible,.footer :focus-visible{outline-color:#FFD84D}
+
+/* ---------- 9. Entre páginas: cross-fade de 200ms (View Transitions) ---------- */
+::view-transition-old(root),::view-transition-new(root){animation-duration:200ms;animation-timing-function:var(--curva)}
+
+/* ---------- Movimento reduzido: só troca instantânea de estado ---------- */
+@media (prefers-reduced-motion:reduce){
+*,*::before,*::after{animation:none!important;transition:none!important}
+.pill:hover,.nav a:hover,.aud .chip:hover,.aud .more:hover,.opt:hover,.wa:hover,.sim .go:hover,.sim .chip:hover,.sim .slot:hover,.burger:hover,.related a:hover,
+.pill:active,.nav a:active,.aud .chip:active,.aud .more:active,.opt:active,.wa:active,.sim .go:active,.sim .chip:active,.sim .slot:active,.burger:active,.related a:active{transform:none!important}
+.sim .slot .old{display:none}
+.chat.armed .q,.chat.armed .a{opacity:1;transform:none}
+.typing{display:none}
+::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+}
+
+/* ---------- 6. Perguntas frequentes: altura animada (220ms); o "+" gira 45° pelo CSS do design ---------- */
+.fq .ans-w{display:grid;grid-template-rows:0fr;transition:grid-template-rows 220ms var(--curva)}
+.fq.open .ans-w{grid-template-rows:1fr}
+.fq .ans-w > div{overflow:hidden;min-height:0}

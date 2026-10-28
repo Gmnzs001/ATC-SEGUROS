@@ -1,0 +1,35 @@
+---
+// Rodapé completo de design/Main.dc.html; o compacto é o das páginas internas (design/Auto.dc.html)
+import { site } from '../config';
+
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+---
+{compact ? (
+<footer class="footer" transition:persist="footer-compact">
+<div class="wrap">
+<a class="logo" href="/"><i aria-hidden="true"></i><span style="margin-left: 8px">ATC Seguros</span></a>
+<span>{site.razaoSocial}, CNPJ {site.cnpj}, SUSEP nº {site.susep}</span>
+</div>
+</footer>
+) : (
+<footer class="footer" transition:persist="footer-full">
+<div class="wrap">
+<div class="f-grid">
+<div>
+<a class="logo" href="/"><i aria-hidden="true"></i><span style="margin-left: 8px">ATC Seguros</span></a>
+<p style="margin-top: 18px; line-height: 1.6; max-width: 320px">{site.endereco}, Goiânia (GO)<br>{site.telefone}, {site.horario}</p>
+</div>
+<div><h3>Pra você</h3><ul><li><a href="/seguros/automoveis">Automóvel</a></li><li><a href="/seguros/residencial">Residencial</a></li><li><a href="/seguros/vida">Vida</a></li><li><a href="/seguros/saude-individual">Plano de saúde</a></li></ul></div>
+<div><h3>Pra empresas</h3><ul><li><a href="/seguros/empresarial">Empresarial</a></li><li><a href="/seguros/frota-de-veiculos">Frota</a></li><li><a href="/seguros/vida-empresas">Vida em grupo</a></li><li><a href="/seguros">Seguro garantia</a></li></ul></div>
+<div><h3>ATC</h3><ul><li><a href="/quem-somos">Quem somos</a></li><li><a href="/sinistro">Sinistro 24h</a></li><li><a href="/seguros">Todos os seguros</a></li><li><a href="#">Privacidade</a></li></ul></div>
+</div>
+<div class="legal">
+<span>{site.razaoSocial}, CNPJ {site.cnpj}, SUSEP nº {site.susep}</span>
+<span>© 2026 ATC Seguros</span>
+</div>
+</div>
+</footer>
+)}

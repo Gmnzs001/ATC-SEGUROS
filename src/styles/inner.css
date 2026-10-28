@@ -1,0 +1,5 @@
+/* Páginas internas (design/Auto.dc.html, Todos, Sobre, Sinistro): o que muda em relação à base da home. */
+.atc h1,.atc h2,.atc h3{font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-0.025em;margin:0;color:#1A1A1A}
+.pill{min-height:56px}
+.footer{margin-top:96px}
+.footer .wrap{padding-top:56px;padding-bottom:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}

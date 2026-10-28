@@ -1,0 +1,167 @@
+---
+// Home: design/Main.dc.html, com o simulador de design/Simulador.dc.html no topo
+import Layout from '../layouts/Layout.astro';
+import Simulador from '../components/Simulador';
+import { site, waLink, telLink } from '../config';
+import '../styles/home.css';
+
+const pessoal = [
+  ['Automóvel', '/seguros/automoveis'],
+  ['Moto', '/seguros/motos'],
+  ['Residencial', '/seguros/residencial'],
+  ['Vida', '/seguros/vida'],
+  ['Plano de saúde', '/seguros/saude-individual'],
+  ['Odontológico', '/seguros/plano-odontologico-individual'],
+  ['Viagem', '/seguros/viagem'],
+  ['Saúde PET', '/seguros/plano-de-saude-pet'],
+  ['Previdência', '/seguros/previdencia-privada'],
+  ['Consórcio', '/seguros'],
+];
+const empresa = [
+  ['Empresarial', '/seguros/empresarial'],
+  ['Frota', '/seguros/frota-de-veiculos'],
+  ['Vida em grupo', '/seguros/vida-empresas'],
+  ['Saúde empresa', '/seguros/saude-empresa'],
+  ['Responsabilidade civil', '/seguros'],
+  ['D&O', '/seguros/diretores-e-conselheiros-do'],
+  ['Seguro garantia', '/seguros'],
+  ['Cargas', '/seguros/transporte-de-cargas'],
+  ['Agronegócio', '/seguros/agronegocios'],
+  ['Riscos digitais', '/seguros/riscos-digitais'],
+];
+const sinistros = ['Bati o carro ou fui roubado', 'Deu problema na minha casa', 'Preciso usar saúde ou vida', 'Aconteceu na minha empresa'];
+---
+<Layout title="ATC Seguros — Home">
+
+<section class="hero" id="cotar">
+<div class="wrap">
+<script is:inline>
+// Animação 1: a abertura roda só na primeira visita da sessão
+try { if (!sessionStorage.getItem('atc-abertura')) { sessionStorage.setItem('atc-abertura', '1'); if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('intro'); } } catch (e) {}
+</script>
+<Simulador client:load start="carro" />
+</div>
+</section>
+
+<section class="insurers" aria-label="Seguradoras parceiras">
+<div class="wrap">
+<p>A gente compara nas maiores seguradoras do país pra você.</p>
+<div class="logos">
+{site.seguradoras.map((s) => <div class="lg">{s}</div>)}
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<h2 class="title">Seguro tem palavra difícil. A gente traduz.</h2>
+<p class="sub">Tudo o que estiver na sua apólice, a gente explica antes de você assinar. Com as nossas palavras, não com as da seguradora.</p>
+<div class="chat">
+<div class="thread">
+<p class="q">O que é franquia?</p>
+<p class="a"><b>ATC</b>É o valor que você paga quando usa o seguro do carro. O resto do conserto, a seguradora paga.</p>
+</div>
+<div class="thread">
+<p class="q">E prêmio, é algo que eu ganho?</p>
+<p class="a"><b>ATC</b>Não, é só o preço do seguro. O valor que você paga pra ficar protegido.</p>
+</div>
+<div class="thread">
+<p class="q">Sinistro é coisa grave?</p>
+<p class="a"><b>ATC</b>É o nome técnico pra "aconteceu algo": uma batida, um roubo, um cano estourado. Aí é com a gente.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="block" id="voce">
+<div class="wrap">
+<h2 class="title">Mais de 50 seguros. Um jeito só de atender.</h2>
+<div class="who">
+<div class="aud aud-y">
+<div class="circle" aria-hidden="true"></div>
+<h3>Pra você e sua família</h3>
+<p class="d">O carro de todo dia, a casa, a saúde e o futuro de quem você ama.</p>
+<div class="chips">
+{pessoal.map(([nome, href]) => <a class="chip" href={href}>{nome}</a>)}
+</div>
+<a class="more" href="/seguros">Ver todos os seguros pra você</a>
+</div>
+<div class="aud aud-w" id="empresa">
+<div class="circle" aria-hidden="true"></div>
+<h3>Pra sua empresa</h3>
+<p class="d">Patrimônio, equipe, frota e contratos, com alguém que entende o seu negócio.</p>
+<div class="chips">
+{empresa.map(([nome, href]) => <a class="chip" href={href}>{nome}</a>)}
+</div>
+<a class="more" href="/seguros">Ver todos os seguros pra empresas</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="block" id="sinistro">
+<div class="wrap">
+<div class="sos-box">
+<div class="sun" aria-hidden="true"></div>
+<div>
+<h2>Aconteceu algo? Respira. A gente resolve com você.</h2>
+<p>Você não vai ficar ouvindo musiquinha numa central. Liga ou chama a ATC, e a gente cuida de tudo com a seguradora.</p>
+<div class="btns">
+<a class="pill pill-yellow" href={telLink(site.telefone24h)}>Ligar 24h: {site.telefone24h}</a>
+<a class="pill pill-white" href={waLink()}>Chamar no WhatsApp</a>
+</div>
+</div>
+<div class="opts">
+{sinistros.map((s) => (
+<a class="opt" href="/sinistro">{s}<span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a>
+))}
+</div>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<h2 class="title">Do primeiro oi até a apólice.</h2>
+<ol class="flow" style="list-style: none; margin-bottom: 0">
+<li class="fstep"><span class="n">1</span><div><b>Você conta o que quer</b><span class="t">No simulador, no WhatsApp ou ligando.</span></div></li>
+<li class="link" aria-hidden="true"></li>
+<li class="fstep"><span class="n">2</span><div><b>A gente compara e explica</b><span class="t">Seguradoras lado a lado, sem enrolação.</span></div></li>
+<li class="link" aria-hidden="true"></li>
+<li class="fstep"><span class="n">3</span><div><b>Você escolhe com calma</b><span class="t">E a ATC segue do seu lado depois.</span></div></li>
+</ol>
+</div>
+</section>
+
+<section class="block" id="sobre">
+<div class="wrap">
+<div class="people">
+<div class="photo">{site.responsavel.foto}<span class="badge">Desde 1998</span></div>
+<div>
+<p class="say">“A ATC cuida de famílias e empresas de Goiânia há quase 30 anos. O cuidado continua o mesmo. O jeito de explicar ficou bem mais simples.”</p>
+<p class="sign"><b>{site.responsavel.nome}</b>, {site.responsavel.cargo} da ATC Seguros</p>
+<div class="reviews">
+{site.depoimentos.map((d) => <p class="rv">{d}</p>)}
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="final">
+<div class="wrap">
+<div class="final-box">
+<div class="c" aria-hidden="true"></div>
+<div style="position: relative">
+<h2>Bora achar o seguro certo pra você?</h2>
+<p>Sem compromisso e sem letra miúda.</p>
+</div>
+<a class="pill pill-dark" href="#cotar">Montar minha proteção</a>
+</div>
+</div>
+</section>
+
+<script>
+import '../scripts/home';
+</script>
+</Layout>
