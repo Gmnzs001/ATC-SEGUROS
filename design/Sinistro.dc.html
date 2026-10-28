@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>ATC Seguros — Sinistro 24h</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F6F2}
+a{color:#1A1A1A}a:hover{color:#000}
+.atc{font-family:'Figtree',sans-serif;color:#1A1A1A;background:#F7F6F2;-webkit-font-smoothing:antialiased;overflow:hidden}
+.atc h1,.atc h2,.atc h3{font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-0.025em;margin:0;color:#1A1A1A}
+.atc p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:96px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-0.02em;text-decoration:none}
+.logo i{width:16px;height:16px;border-radius:50%;background:#1A1A1A;display:inline-block;box-shadow:6px 0 0 0 #FFD84D}
+.back{font-weight:600;font-size:15px}
+.top{position:relative;overflow:hidden;background:#1A1A1A;color:#fff;border-radius:44px;padding:56px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:40px;align-items:center}
+.top .sun{position:absolute;width:420px;height:420px;border-radius:50%;background:#FFD84D;right:-130px;top:-200px}
+.top h1{color:#fff;font-size:68px;line-height:0.98;font-weight:800;letter-spacing:-0.045em;position:relative}
+.top p{color:#D4D4D4;font-size:20px;line-height:1.5;margin-top:18px;position:relative}
+.calls{display:flex;flex-direction:column;gap:12px;position:relative}
+.call{display:flex;align-items:center;gap:16px;min-height:80px;padding:0 28px 0 14px;border-radius:999px;text-decoration:none;font-weight:700;font-size:20px}
+.call .ic{flex-shrink:0;width:54px;height:54px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
+.call small{display:block;font-weight:500;font-size:14px;opacity:0.8}
+.call-y{background:#FFD84D;color:#1A1A1A}.call-y:hover{color:#1A1A1A;background:#FFCF1F}
+.call-y .ic{background:#1A1A1A}
+.call-w{background:#fff;color:#1A1A1A}.call-w:hover{color:#1A1A1A}
+.call-w .ic{background:#1FAF52}
+.sos{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.sos a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:#fff;text-decoration:none;font-weight:600;font-size:15px}
+.sos a b{font-family:'Bricolage Grotesque',sans-serif;font-size:18px}
+.pick{margin-top:64px}
+.pick h2{font-size:44px;font-weight:800}
+.pick .hint{font-size:18px;color:#4A4A4A;margin-top:8px}
+.opts{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.o{all:unset;cursor:pointer;display:inline-flex;align-items:center;min-height:56px;padding:0 24px;border-radius:999px;background:#fff;font-weight:600;font-size:17px}
+.o:hover{background:#FFE88A}
+.o.on{background:#1A1A1A;color:#fff}
+.o:focus-visible{outline:3px solid #1A1A1A;outline-offset:2px}
+.guide{margin-top:28px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,0.7fr);gap:24px;align-items:start}
+.steps{background:#fff;border-radius:40px;padding:40px}
+.steps h3{font-size:30px;font-weight:800}
+.steps ol{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-direction:column;gap:18px}
+.steps li{display:flex;gap:16px;align-items:flex-start}
+.steps .n{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:#FFD84D;display:inline-flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px}
+.steps li b{display:block;font-size:18px;font-weight:700;padding-top:2px}
+.steps li span.t{display:block;font-size:16px;color:#4A4A4A;line-height:1.5;margin-top:4px}
+.docs{background:#FFD84D;border-radius:40px;padding:36px 32px}
+.docs h3{font-size:24px;font-weight:800}
+.docs ul{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:10px}
+.docs li{background:#fff;border-radius:999px;padding:12px 18px;font-weight:600;font-size:15px}
+.docs p{font-size:15px;margin-top:18px;line-height:1.5;color:#3A3200}
+.insurers{margin-top:64px}
+.insurers h2{font-size:36px;font-weight:800}
+.insurers .hint{font-size:17px;color:#4A4A4A;margin-top:8px}
+.ilist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.ilist div{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff;border-radius:999px;min-height:64px;padding:0 24px;font-weight:600}
+.ilist span{color:#6A6A6A;font-weight:500;font-size:15px}
+.footer{margin-top:96px;background:#1A1A1A;color:#BDBDBD;font-size:15px;border-radius:44px 44px 0 0}
+.footer .wrap{padding-top:56px;padding-bottom:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer .logo{color:#fff}
+.footer .logo i{background:#fff}
+@media (max-width:900px){
+.wrap{padding:0 16px}
+.header .wrap{height:76px}
+.top{grid-template-columns:minmax(0,1fr);padding:36px 22px;border-radius:32px;gap:28px}
+.top .sun{width:300px;height:300px}
+.top h1{font-size:42px}
+.top p{font-size:17px}
+.call{min-height:72px;font-size:18px}
+.pick{margin-top:48px}
+.pick h2{font-size:30px}
+.o{font-size:16px;min-height:52px}
+.guide{grid-template-columns:minmax(0,1fr)}
+.steps,.docs{padding:28px 22px;border-radius:30px}
+.steps h3{font-size:24px}
+.insurers h2{font-size:28px}
+.ilist{grid-template-columns:minmax(0,1fr)}
+.footer{border-radius:32px 32px 0 0}
+}
+</style>
+</helmet>
+<div class="atc" style="width: 100%; min-height: 100vh">
+
+<header class="header">
+<div class="wrap">
+<a class="logo" href="Main.dc.html"><i aria-hidden="true"></i><span style="margin-left: 8px">ATC Seguros</span></a>
+<a class="back" href="Main.dc.html">Voltar pro início</a>
+</div>
+</header>
+
+<div class="wrap">
+<section class="top">
+<div class="sun" aria-hidden="true"></div>
+<div>
+<h1>Aconteceu algo? Calma, a gente está aqui.</h1>
+<p>Primeiro, você e quem está com você. O resto a ATC resolve com a seguradora, do começo ao fim.</p>
+</div>
+<div class="calls">
+<a class="call call-y" href="#"><span class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFD84D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></span><span>Ligar agora<small>24 horas: [TELEFONE 24H]</small></span></a>
+<a class="call call-w" href="#"><span class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.3A8.5 8.5 0 1 1 21 12z"></path></svg></span><span>Chamar no WhatsApp<small>Manda foto e localização</small></span></a>
+</div>
+</section>
+<nav class="sos" aria-label="Emergência">
+<a href="tel:192"><b>192</b>SAMU</a>
+<a href="tel:193"><b>193</b>Bombeiros</a>
+<a href="tel:190"><b>190</b>Polícia</a>
+</nav>
+
+<section class="pick">
+<h2>O que aconteceu?</h2>
+<p class="hint">Escolha e veja o que fazer agora, passo a passo.</p>
+<div class="opts" role="group" aria-label="Tipo de ocorrência">
+<sc-for list="{{opts}}" as="o" hint-placeholder-count="7">
+<button class="{{o.cls}}" type="button" onClick="{{o.pick}}" aria-pressed="{{o.pressed}}">{{o.label}}</button>
+</sc-for>
+</div>
+<div class="guide">
+<div class="steps">
+<h3>{{title}}</h3>
+<ol>
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+<li><span class="n">{{s.n}}</span><div><b>{{s.b}}</b><span class="t">{{s.t}}</span></div></li>
+</sc-for>
+</ol>
+</div>
+<div class="docs">
+<h3>Separe esses documentos</h3>
+<ul>
+<sc-for list="{{docs}}" as="d" hint-placeholder-count="4">
+<li>{{d.name}}</li>
+</sc-for>
+</ul>
+<p>Não tem tudo agora? Sem problema. Manda o que tiver e a gente te ajuda com o resto.</p>
+</div>
+</div>
+</section>
+
+<section class="insurers">
+<h2>Telefones 24h das seguradoras</h2>
+<p class="hint">Se preferir falar direto com a sua seguradora, o número também está na sua apólice.</p>
+<div class="ilist">
+<div>[SEGURADORA]<span>[0800]</span></div>
+<div>[SEGURADORA]<span>[0800]</span></div>
+<div>[SEGURADORA]<span>[0800]</span></div>
+<div>[SEGURADORA]<span>[0800]</span></div>
+<div>[SEGURADORA]<span>[0800]</span></div>
+<div>[SEGURADORA]<span>[0800]</span></div>
+</div>
+</section>
+</div>
+
+<footer class="footer">
+<div class="wrap">
+<a class="logo" href="Main.dc.html"><i aria-hidden="true"></i><span style="margin-left: 8px">ATC Seguros</span></a>
+<span>ATC Administradora e Corretora LTDA, CNPJ [CNPJ], SUSEP nº [NÚMERO SUSEP]</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2700}}'>
+var CASES = [
+  { id: 'batida', label: 'Bati o carro', title: 'Batida de carro', steps: [
+    ['Sinalize e saia da pista', 'Pisca-alerta e triângulo. Todo mundo em lugar seguro.'],
+    ['Alguém se machucou?', 'Ligue 192 (SAMU) antes de qualquer coisa.'],
+    ['Fotografe tudo', 'Os carros, as placas, o local. Anote nome, telefone e CNH do outro motorista.'],
+    ['Chame a ATC', 'A gente abre o sinistro com a seguradora e te diz se precisa de boletim de ocorrência.']
+  ], docs: ['CNH do motorista', 'Documento do carro (CRLV)', 'Fotos do acidente', 'Boletim de ocorrência, se houver'] },
+  { id: 'roubo', label: 'Roubaram meu carro', title: 'Roubo ou furto do veículo', steps: [
+    ['Fique em segurança', 'Não reaja e não vá atrás de ninguém.'],
+    ['Ligue 190', 'E registre o boletim de ocorrência o quanto antes.'],
+    ['Avise a ATC no mesmo dia', 'Quanto antes a seguradora souber, mais rápido o processo anda.'],
+    ['Separe as chaves e documentos', 'A seguradora vai pedir as chaves do carro e os documentos.']
+  ], docs: ['Boletim de ocorrência', 'CNH', 'Documento do carro (CRLV)', 'Todas as chaves do carro'] },
+  { id: 'pane', label: 'O carro quebrou', title: 'Pane, pneu ou bateria', steps: [
+    ['Pare em lugar seguro', 'Acostamento, pisca-alerta ligado e triângulo.'],
+    ['Chame a ATC ou a assistência 24h', 'A gente aciona o guincho ou o socorro pra você.'],
+    ['Mande sua localização', 'Pelo WhatsApp, fica mais rápido pro guincho te achar.']
+  ], docs: ['Placa do carro', 'Seu CPF', 'Sua localização'] },
+  { id: 'casa', label: 'Problema em casa', title: 'Problema em casa', steps: [
+    ['Garanta a segurança', 'Em incêndio, saia e ligue 193. Em vazamento, feche o registro.'],
+    ['Fotografe os danos', 'Antes de arrumar qualquer coisa.'],
+    ['Não jogue nada fora', 'O que estragou pode ser pedido na vistoria.'],
+    ['Chame a ATC', 'Chaveiro, encanador e eletricista da assistência 24h, e a gente cuida do sinistro.']
+  ], docs: ['Fotos dos danos', 'Notas fiscais dos bens, se tiver', 'Boletim de ocorrência, se for roubo'] },
+  { id: 'saude', label: 'Saúde ou vida', title: 'Saúde, vida ou acidente pessoal', steps: [
+    ['Emergência médica?', 'Vá ao pronto-socorro mais próximo ou ligue 192.'],
+    ['Plano de saúde', 'Use a carteirinha ou o app da operadora. Qualquer problema, chame a ATC.'],
+    ['Seguro de vida ou acidente', 'A ATC orienta a família sobre os documentos e acompanha o pedido com a seguradora.']
+  ], docs: ['Documentos pessoais', 'Laudos e relatórios médicos', 'Certidões, quando pedidas'] },
+  { id: 'empresa', label: 'Na minha empresa', title: 'Ocorrência na empresa', steps: [
+    ['Proteja as pessoas', 'Em incêndio, 193. Em crime, 190.'],
+    ['Registre tudo', 'Fotos, vídeos e boletim de ocorrência quando houver crime.'],
+    ['Chame a ATC', 'A gente abre o sinistro e acompanha a vistoria, inclusive o que a empresa deixou de faturar, se você tiver essa cobertura.']
+  ], docs: ['Fotos e vídeos', 'Notas fiscais e inventário', 'Boletim de ocorrência, se houver'] },
+  { id: 'viagem', label: 'Em viagem', title: 'Problema em viagem', steps: [
+    ['Ligue antes de ir ao médico', 'Use a central 24h que está na sua apólice de viagem. Ela indica onde ser atendido.'],
+    ['Guarde todos os recibos', 'Remédio, consulta, táxi. Tudo pode ser reembolsado conforme a apólice.'],
+    ['Mala extraviada?', 'Registre na companhia aérea antes de sair do aeroporto e guarde o comprovante.']
+  ], docs: ['Apólice de viagem', 'Recibos e notas', 'Comprovante da companhia aérea'] }
+];
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { c: 0 }; }
+  renderVals() {
+    var self = this;
+    var c = CASES[this.state.c];
+    return {
+      opts: CASES.map(function (x, i) { return { label: x.label, cls: i === self.state.c ? 'o on' : 'o', pressed: i === self.state.c ? 'true' : 'false', pick: function () { self.setState({ c: i }); } }; }),
+      title: c.title,
+      steps: c.steps.map(function (s, i) { return { n: i + 1, b: s[0], t: s[1] }; }),
+      docs: c.docs.map(function (d) { return { name: d }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

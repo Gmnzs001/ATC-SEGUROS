@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>ATC Seguros — Seguro auto</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F6F2}
+a{color:#1A1A1A}a:hover{color:#000}
+.atc{font-family:'Figtree',sans-serif;color:#1A1A1A;background:#F7F6F2;-webkit-font-smoothing:antialiased;overflow:hidden}
+.atc h1,.atc h2,.atc h3{font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-0.025em;margin:0;color:#1A1A1A}
+.atc p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:96px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-0.02em;text-decoration:none}
+.logo i{width:16px;height:16px;border-radius:50%;background:#1A1A1A;display:inline-block;box-shadow:6px 0 0 0 #FFD84D}
+.nav{display:flex;gap:6px;background:#fff;border-radius:999px;padding:6px}
+.nav a{text-decoration:none;font-weight:600;font-size:15px;padding:10px 18px;border-radius:999px}
+.nav a:hover{background:#F4F4F1}
+.nav a.sos{background:#FFD84D}
+.nav a.here{background:#1A1A1A;color:#fff}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;white-space:nowrap;box-sizing:border-box}
+.pill-dark{background:#1A1A1A;color:#fff}.pill-dark:hover{color:#fff;background:#000}
+.pill-yellow{background:#FFD84D;color:#1A1A1A}.pill-yellow:hover{background:#FFCF1F;color:#1A1A1A}
+.pill-white{background:#fff;color:#1A1A1A}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:0;background:#fff;align-items:center;justify-content:center}
+.crumbs{display:flex;gap:8px;flex-wrap:wrap;font-size:14px;color:#6A6A6A;padding-top:8px}
+.crumbs a{color:#6A6A6A}
+.hero{padding:28px 0 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.hero h1{font-size:88px;line-height:0.95;font-weight:800;letter-spacing:-0.05em}
+.hero .lead{font-size:20px;line-height:1.55;color:#3F3F3F;margin-top:24px;max-width:500px}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.talk{position:relative;min-height:440px;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:0 24px}
+.talk .sun{position:absolute;width:460px;height:460px;border-radius:50%;background:#FFD84D;left:50%;top:50%;transform:translate(-50%,-50%)}
+.q{position:relative;align-self:flex-end;background:#1A1A1A;color:#fff;border-radius:26px 26px 6px 26px;padding:16px 22px;font-weight:600;font-size:18px}
+.a{position:relative;align-self:flex-start;background:#fff;border-radius:26px 26px 26px 6px;padding:20px 22px;font-size:17px;line-height:1.5;max-width:400px;box-shadow:0 14px 34px rgba(90,70,0,0.14)}
+.a b.who{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;color:#8A7300;margin-bottom:6px;font-weight:700}
+.factors{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.factors span{background:#FFF1B8;border-radius:999px;padding:6px 12px;font-size:14px;font-weight:600}
+.block{padding:96px 0 0}
+.title{font-size:52px;line-height:1.05;font-weight:800;max-width:760px}
+.sub{font-size:19px;line-height:1.55;color:#4A4A4A;margin-top:16px;max-width:640px}
+.covgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;margin-top:44px}
+.panel{position:relative;overflow:hidden;border-radius:40px;padding:40px;box-sizing:border-box}
+.panel-w{background:#fff}
+.panel-y{background:#FFD84D}
+.panel h3{font-size:28px;font-weight:800;position:relative}
+.panel .hint{font-size:16px;color:#4A4A4A;margin-top:6px;position:relative}
+.panel-y .hint{color:#3A3200}
+.items{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-direction:column;gap:18px;position:relative}
+.items li{display:flex;gap:14px;align-items:flex-start}
+.ck{flex-shrink:0;width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
+.panel-w .ck{background:#FFD84D}
+.panel-y .ck{background:#fff}
+.items b{display:block;font-size:18px;font-weight:700}
+.items span.d{display:block;font-size:15px;color:#4A4A4A;line-height:1.45;margin-top:3px}
+.panel-y .items span.d{color:#3A3200}
+.panel-y .circle{position:absolute;width:300px;height:300px;border-radius:50%;background:#FFE88A;right:-100px;bottom:-120px}
+.nope{margin-top:24px;background:#1A1A1A;color:#fff;border-radius:40px;padding:44px;display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:40px;align-items:start}
+.nope h3{color:#fff;font-size:32px;font-weight:800;line-height:1.12}
+.nope .hint{color:#CFCFCF;font-size:17px;line-height:1.5;margin-top:14px}
+.nolist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.nolist li{background:#2A2A2A;border-radius:24px;padding:18px 20px;font-size:15px;line-height:1.45;color:#E5E5E5}
+.nolist b{display:block;color:#fff;font-size:16px;margin-bottom:4px}
+.simwrap{padding:96px 0 0}
+.faq{margin-top:40px;display:flex;flex-direction:column;gap:10px;max-width:880px}
+.fq{background:#fff;border-radius:28px;overflow:hidden}
+.fq button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 26px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.01em}
+.fq button:focus-visible{outline:3px solid #FFD84D;outline-offset:-3px;border-radius:28px}
+.fq .plus{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#F4F4F1;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s ease,background .2s ease}
+.fq.open .plus{transform:rotate(45deg);background:#FFD84D}
+.fq .ans{padding:0 26px 24px;font-size:17px;line-height:1.6;color:#3F3F3F;max-width:720px}
+.crash{position:relative;overflow:hidden;background:#FFD84D;border-radius:44px;padding:56px;display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.crash h2{font-size:44px;line-height:1.06;font-weight:800;position:relative}
+.crash p.lead{font-size:18px;line-height:1.55;margin-top:16px;position:relative}
+.crash .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;position:relative}
+.crash .c{position:absolute;width:420px;height:420px;border-radius:50%;background:#FFE88A;left:-160px;bottom:-240px}
+.todo{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;position:relative}
+.todo li{display:flex;gap:16px;align-items:center;background:#fff;border-radius:999px;padding:12px 24px 12px 12px}
+.todo .n{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:#1A1A1A;color:#FFD84D;display:inline-flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px}
+.todo b{display:block;font-size:17px}
+.todo span.t{display:block;font-size:14px;color:#4A4A4A;margin-top:2px}
+.related{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.related a{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border-radius:999px;background:#fff;font-weight:600;font-size:16px;text-decoration:none}
+.related a:hover{background:#1A1A1A;color:#fff}
+.footer{margin-top:96px;background:#1A1A1A;color:#BDBDBD;font-size:15px;border-radius:44px 44px 0 0}
+.footer .wrap{padding-top:56px;padding-bottom:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer .logo{color:#fff}
+.footer .logo i{background:#fff}
+.footer a{color:#BDBDBD}
+.wa{position:fixed;right:24px;bottom:24px;width:62px;height:62px;border-radius:50%;background:#1FAF52;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+@media (max-width:900px){
+.wrap{padding:0 16px}
+.header .wrap{height:76px}
+.nav,.header .pill{display:none}
+.burger{display:inline-flex}
+.hero-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+.hero h1{font-size:56px}
+.hero .lead{font-size:17px}
+.hero .btns .pill{width:100%}
+.talk{min-height:0;padding:40px 0}
+.talk .sun{width:340px;height:340px}
+.q{font-size:16px}
+.a{font-size:16px}
+.block,.simwrap{padding-top:64px}
+.title{font-size:34px}
+.sub{font-size:17px}
+.covgrid{grid-template-columns:minmax(0,1fr)}
+.panel{padding:28px 22px;border-radius:30px}
+.panel h3{font-size:24px}
+.nope{grid-template-columns:minmax(0,1fr);padding:30px 22px;border-radius:30px;gap:24px}
+.nope h3{font-size:26px}
+.nolist{grid-template-columns:minmax(0,1fr)}
+.fq button{font-size:17px;padding:18px 20px}
+.fq .ans{padding:0 20px 20px;font-size:16px}
+.crash{grid-template-columns:minmax(0,1fr);padding:36px 22px;border-radius:32px;gap:28px}
+.crash h2{font-size:32px}
+.crash .btns .pill{width:100%}
+.todo li{border-radius:26px;align-items:flex-start}
+.footer{border-radius:32px 32px 0 0}
+}
+</style>
+</helmet>
+<div class="atc" style="width: 100%; min-height: 100vh">
+
+<header class="header">
+<div class="wrap">
+<a class="logo" href="Main.dc.html"><i aria-hidden="true"></i><span style="margin-left: 8px">ATC Seguros</span></a>
+<nav class="nav" aria-label="Principal">
+<a class="here" href="#">Para você</a>
+<a href="#">Para sua empresa</a>
+<a href="#">Quem somos</a>
+<a class="sos" href="#">Sinistro 24h</a>
+</nav>
+<a class="pill pill-dark" href="#simulador">Quero cotar</a>
+<button class="burger" type="button" aria-label="Abrir menu">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg>
+</button>
+</div>
+</header>
+
+<section class="hero">
+<div class="wrap">
+<nav class="crumbs" aria-label="Você está em"><a href="Main.dc.html">Início</a><span aria-hidden="true">/</span><a href="#">Pra você</a><span aria-hidden="true">/</span><span>Seguro auto</span></nav>
+<div class="hero-grid" style="margin-top: 28px">
+<div>
+<h1>Seguro auto</h1>
+<p class="lead">Pra quem usa o carro todo dia, roda em aplicativo ou só sai no fim de semana. A gente cota nas maiores seguradoras e explica cada cobertura antes de você decidir.</p>
+<div class="btns">
+<a class="pill pill-dark" href="#simulador">Montar meu seguro auto</a>
+<a class="pill pill-white" href="#">Chamar no WhatsApp</a>
+</div>
+</div>
+<div class="talk">
+<div class="sun" aria-hidden="true"></div>
+<p class="q">Quanto custa um seguro auto?</p>
+<div class="a"><b class="who">ATC</b>Depende de algumas coisas, e a gente te explica cada uma:
+<div class="factors"><span>o carro</span><span>seu CEP</span><span>onde ele dorme</span><span>quem dirige</span><span>como você usa</span></div>
+</div>
+<p class="q">Então não dá pra saber agora?</p>
+<p class="a"><b class="who">ATC</b>Dá sim. Monta seu seguro aqui embaixo e a gente te manda as opções comparadas no WhatsApp.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<h2 class="title">O que o seguro auto cobre.</h2>
+<p class="sub">Uma parte vem em todo seguro. A outra você escolhe conforme a sua rotina.</p>
+<div class="covgrid">
+<div class="panel panel-w">
+<h3>Vem no básico</h3>
+<p class="hint">O que a gente sempre inclui na cotação.</p>
+<ul class="items">
+<li><span class="ck" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span><div><b>Batida e perda total</b><span class="d">Bateu? A seguradora paga o conserto. Você paga só a franquia.</span></div></li>
+<li><span class="ck" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span><div><b>Roubo e furto</b><span class="d">Se levarem o carro, você recebe o valor dele pela tabela combinada na apólice.</span></div></li>
+<li><span class="ck" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span><div><b>Danos a terceiros</b><span class="d">Bateu no carro de alguém ou feriu uma pessoa? O seguro paga até o limite contratado.</span></div></li>
+<li><span class="ck" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span><div><b>Guincho e assistência 24h</b><span class="d">Pane, pneu furado ou bateria arriada: alguém vai até você, de dia ou de madrugada.</span></div></li>
+</ul>
+</div>
+<div class="panel panel-y">
+<div class="circle" aria-hidden="true"></div>
+<h3>Dá pra incluir</h3>
+<p class="hint">Faz diferença dependendo de como você usa o carro.</p>
+<ul class="items">
+<li><span class="ck" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"><path d="M12 6v12M6 12h12"></path></svg></span><div><b>Carro reserva</b><span class="d">Se o seu for pra oficina, você não fica a pé.</span></div></li>
+<li><span class="ck" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"><path d="M12 6v12M6 12h12"></path></svg></span><div><b>Vidros, faróis e retrovisores</b><span class="d">Trincou o para-brisa? Troca sem dor de cabeça.</span></div></li>
+<li><span class="ck" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"><path d="M12 6v12M6 12h12"></path></svg></span><div><b>Uso em aplicativo</b><span class="d">Quem roda com passageiro precisa declarar. A gente acha a seguradora que aceita.</span></div></li>
+<li><span class="ck" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"><path d="M12 6v12M6 12h12"></path></svg></span><div><b>Proteção pros passageiros</b><span class="d">Se alguém que está no seu carro se machucar num acidente, recebe indenização.</span></div></li>
+</ul>
+</div>
+</div>
+<div class="nope">
+<div>
+<h3>E o que ele não cobre. Sem letra miúda.</h3>
+<p class="hint">Ninguém conta isso antes. A gente conta. As regras exatas mudam de seguradora pra seguradora, e a gente te mostra as da sua apólice.</p>
+</div>
+<ul class="nolist">
+<li><b>Desgaste do dia a dia</b>Pneu careca, freio gasto, motor cansado. Isso é manutenção, não seguro.</li>
+<li><b>Defeito mecânico</b>Se o carro quebrou sozinho, sem acidente, o seguro não paga o conserto. O guincho, sim.</li>
+<li><b>Dirigir depois de beber</b>Se o motorista estava alcoolizado, a seguradora pode negar a indenização.</li>
+<li><b>Informação errada no cadastro</b>Disse que o carro dorme na garagem e ele dorme na rua? Isso pode cancelar o seguro.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="simwrap" id="simulador">
+<div class="wrap">
+<dc-import name="Simulador" start="carro" title="Monte seu seguro auto." intro="Toque nas palavras amarelas. A gente prepara a cotação com isso." hint-size="100%,680px"></dc-import>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<h2 class="title">Perguntas que todo mundo faz.</h2>
+<div class="faq">
+<sc-for list="{{faq}}" as="f" hint-placeholder-count="5">
+<div class="{{f.cls}}">
+<button type="button" onClick="{{f.toggle}}" aria-expanded="{{f.expanded}}">{{f.q}}<span class="plus" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></button>
+<sc-if value="{{f.open}}" hint-placeholder-val="{{ false }}"><p class="ans">{{f.a}}</p></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="crash">
+<div class="c" aria-hidden="true"></div>
+<div>
+<h2>Bateu o carro? Faz isso agora.</h2>
+<p class="lead">Respira. Ninguém se machucou? Então a gente resolve o resto junto com você.</p>
+<div class="btns">
+<a class="pill pill-dark" href="#">Ligar 24h: [TELEFONE]</a>
+<a class="pill pill-white" href="#">Chamar no WhatsApp</a>
+</div>
+</div>
+<ol class="todo">
+<li><span class="n">1</span><div><b>Sinalize e se proteja</b><span class="t">Pisca-alerta, triângulo e todo mundo fora da pista.</span></div></li>
+<li><span class="n">2</span><div><b>Fotografe tudo</b><span class="t">Os carros, a placa do outro e o local. Anote nome e telefone.</span></div></li>
+<li><span class="n">3</span><div><b>Chame a ATC</b><span class="t">A gente aciona a seguradora e acompanha até o carro voltar.</span></div></li>
+</ol>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<h2 class="title" style="font-size: 36px">Quem tem carro também costuma proteger:</h2>
+<div class="related">
+<a href="#">Moto</a>
+<a href="#">Residencial</a>
+<a href="#">Vida</a>
+<a href="#">Frota de veículos</a>
+<a href="#">Proteção dos passageiros (APP)</a>
+<a href="#">Carta Verde (viagem ao Mercosul)</a>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="wrap">
+<a class="logo" href="Main.dc.html"><i aria-hidden="true"></i><span style="margin-left: 8px">ATC Seguros</span></a>
+<span>ATC Administradora e Corretora LTDA, CNPJ [CNPJ], SUSEP nº [NÚMERO SUSEP]</span>
+</div>
+</footer>
+
+<a class="wa" href="#" aria-label="Falar no WhatsApp">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.3A8.5 8.5 0 1 1 21 12z"></path></svg>
+</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
+var FAQ = [
+  ['Quanto custa um seguro auto?', 'Depende do carro, do seu CEP, de onde ele dorme, de quem dirige e de como você usa. Por isso não dá pra cravar um preço sem cotar. Monte seu seguro no simulador acima e a gente te manda as opções comparadas no WhatsApp.'],
+  ['O que é franquia e como escolher?', 'É o valor que você paga quando usa o seguro pra consertar o seu carro. Franquia mais alta deixa o seguro mais barato, mas pesa no bolso se você bater. A gente te mostra as duas opções lado a lado.'],
+  ['Posso trocar de seguradora na renovação?', 'Pode. E o desconto que você ganhou por não ter usado o seguro (o bônus) vai junto com você. O ideal é começar a cotar uns 30 dias antes de vencer.'],
+  ['Rodo em aplicativo. Preciso de algo diferente?', 'Precisa declarar, sim. Se você usa o carro pra Uber ou 99 e não avisa a seguradora, pode ficar sem cobertura justamente quando precisar. Nem toda seguradora aceita, e a gente sabe quais aceitam.'],
+  ['Meu filho vai dirigir de vez em quando. E aí?', 'Motorista entre 18 e 25 anos que usa o carro precisa estar no cadastro. Se não estiver e acontecer algo com ele dirigindo, a seguradora pode negar. Conta pra gente e a gente acha o jeito mais em conta de incluir.']
+];
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { open: 0 }; }
+  renderVals() {
+    var self = this;
+    var o = this.state.open;
+    return {
+      faq: FAQ.map(function (f, i) {
+        return { q: f[0], a: f[1], open: o === i, cls: o === i ? 'fq open' : 'fq', expanded: o === i ? 'true' : 'false', toggle: function () { self.setState({ open: o === i ? -1 : i }); } };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

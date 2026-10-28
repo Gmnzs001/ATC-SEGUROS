@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>ATC Seguros — Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F6F2}
+a{color:#1A1A1A}a:hover{color:#000}
+.atc{font-family:'Figtree',sans-serif;color:#1A1A1A;background:#F7F6F2;-webkit-font-smoothing:antialiased;overflow:hidden}
+.atc h2,.atc h3{font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-0.025em;margin:0;color:#1A1A1A}
+.atc p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:96px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-0.02em;text-decoration:none}
+.logo i{width:16px;height:16px;border-radius:50%;background:#1A1A1A;display:inline-block;box-shadow:6px 0 0 0 #FFD84D}
+.nav{display:flex;gap:6px;background:#fff;border-radius:999px;padding:6px}
+.nav a{text-decoration:none;font-weight:600;font-size:15px;padding:10px 18px;border-radius:999px}
+.nav a:hover{background:#F4F4F1}
+.nav a.sos{background:#FFD84D}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;white-space:nowrap;box-sizing:border-box}
+.pill-dark{background:#1A1A1A;color:#fff}.pill-dark:hover{color:#fff;background:#000}
+.pill-yellow{background:#FFD84D;color:#1A1A1A}.pill-yellow:hover{background:#FFCF1F;color:#1A1A1A}
+.pill-white{background:#fff;color:#1A1A1A}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:0;background:#fff;align-items:center;justify-content:center}
+.hero{padding:8px 0 0}
+.insurers{padding:56px 0 24px}
+.insurers .wrap{display:flex;align-items:center;gap:32px}
+.insurers p{font-size:16px;color:#5A5A5A;line-height:1.4;max-width:230px;flex-shrink:0}
+.logos{display:flex;flex-wrap:wrap;gap:12px;flex:1}
+.lg{flex:1 1 120px;height:60px;border-radius:999px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;color:#6A6A6A;font-weight:600}
+.block{padding:96px 0 0}
+.title{font-size:52px;line-height:1.05;font-weight:800;max-width:760px}
+.sub{font-size:19px;line-height:1.55;color:#4A4A4A;margin-top:16px;max-width:620px}
+.chat{margin-top:48px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.thread{display:flex;flex-direction:column;gap:10px}
+.q{align-self:flex-end;background:#1A1A1A;color:#fff;border-radius:26px 26px 6px 26px;padding:16px 22px;font-weight:600;font-size:17px}
+.a{align-self:flex-start;background:#fff;border-radius:26px 26px 26px 6px;padding:20px 22px;font-size:17px;line-height:1.5}
+.a b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;color:#8A7300;margin-bottom:4px;font-weight:700;letter-spacing:0}
+.who{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:48px}
+.aud{position:relative;overflow:hidden;border-radius:40px;padding:44px;display:flex;flex-direction:column;gap:22px;min-height:420px;box-sizing:border-box}
+.aud h3{font-size:36px;font-weight:800;line-height:1.1;position:relative}
+.aud .d{font-size:17px;line-height:1.5;position:relative;max-width:420px}
+.aud-y{background:#FFD84D}
+.aud-w{background:#fff}
+.aud .circle{position:absolute;width:300px;height:300px;border-radius:50%;right:-90px;bottom:-110px}
+.aud-y .circle{background:#FFE88A}
+.aud-w .circle{background:#F7F6F2}
+.chips{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.chip{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none}
+.aud-y .chip{background:#fff}
+.aud-w .chip{background:#F4F4F1}
+.chip:hover{background:#1A1A1A;color:#fff}
+.aud .more{position:relative;margin-top:auto;font-weight:700;font-size:16px}
+.sos-box{position:relative;overflow:hidden;background:#1A1A1A;color:#fff;border-radius:44px;padding:64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.sos-box h2{color:#fff;font-size:48px;line-height:1.06;font-weight:800;position:relative}
+.sos-box p{color:#CFCFCF;font-size:18px;line-height:1.55;margin-top:18px;position:relative}
+.sos-box .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;position:relative}
+.sos-box .sun{position:absolute;width:380px;height:380px;border-radius:50%;background:#FFD84D;left:-170px;bottom:-230px;opacity:0.95}
+.opts{display:flex;flex-direction:column;gap:12px;position:relative}
+.opt{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px;padding:0 10px 0 26px;border-radius:999px;background:#2A2A2A;color:#fff;text-decoration:none;font-weight:600;font-size:17px}
+.opt:hover{background:#333;color:#fff}
+.opt span{width:46px;height:46px;border-radius:50%;background:#FFD84D;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.flow{margin-top:40px;background:#fff;border-radius:999px;padding:14px;display:flex;align-items:center;gap:0}
+.fstep{flex:1;display:flex;align-items:center;gap:16px;padding:10px 16px;min-width:0}
+.fstep .n{flex-shrink:0;width:56px;height:56px;border-radius:50%;background:#FFD84D;display:inline-flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px}
+.fstep b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:700;letter-spacing:-0.01em}
+.fstep span.t{display:block;font-size:15px;color:#5A5A5A;margin-top:2px;line-height:1.4}
+.link{flex-shrink:0;width:48px;border-top:3px dotted #D8D5CB}
+.people{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.photo{aspect-ratio:1/1;border-radius:50%;background:#E9E7DF;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px;box-sizing:border-box;color:#5A5A5A;font-size:16px;line-height:1.5;position:relative}
+.photo .badge{position:absolute;right:6%;bottom:8%;background:#FFD84D;border-radius:999px;padding:14px 22px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:#1A1A1A}
+.say{font-family:'Bricolage Grotesque',sans-serif;font-size:36px;line-height:1.25;font-weight:700;letter-spacing:-0.02em}
+.sign{margin-top:22px;font-size:17px;color:#4A4A4A}
+.sign b{color:#1A1A1A}
+.reviews{display:flex;flex-direction:column;gap:10px;margin-top:32px}
+.rv{align-self:flex-start;background:#fff;border-radius:26px 26px 26px 6px;padding:16px 22px;font-size:16px;color:#6A6A6A;line-height:1.5}
+.final{padding:96px 0}
+.final-box{position:relative;overflow:hidden;background:#FFD84D;border-radius:44px;padding:72px 64px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.final-box h2{font-size:52px;line-height:1.05;font-weight:800;max-width:620px;position:relative}
+.final-box p{font-size:19px;margin-top:14px;position:relative}
+.final-box .c{position:absolute;width:420px;height:420px;border-radius:50%;background:#FFE88A;right:-120px;top:-200px}
+.final-box .pill{position:relative}
+.footer{background:#1A1A1A;color:#BDBDBD;font-size:15px;border-radius:44px 44px 0 0}
+.footer .wrap{padding-top:64px;padding-bottom:40px}
+.f-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:40px}
+.footer h3{font-family:'Figtree',sans-serif;color:#fff;font-size:15px;font-weight:700;letter-spacing:0;margin-bottom:14px}
+.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.footer a{color:#BDBDBD;text-decoration:none}
+.footer .logo{color:#fff}
+.footer .logo i{background:#fff}
+.legal{margin-top:48px;padding-top:24px;border-top:1px solid #2E2E2E;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#8A8A8A}
+.wa{position:fixed;right:24px;bottom:24px;width:62px;height:62px;border-radius:50%;background:#1FAF52;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+@media (max-width:900px){
+.wrap{padding:0 16px}
+.header .wrap{height:76px}
+.nav,.header .pill{display:none}
+.burger{display:inline-flex}
+.insurers{padding:40px 0 8px}
+.insurers .wrap{flex-direction:column;align-items:flex-start;gap:16px}
+.insurers p{max-width:none}
+.lg{flex:1 1 30%;height:52px}
+.block{padding:64px 0 0}
+.title{font-size:34px}
+.sub{font-size:17px}
+.chat,.who{grid-template-columns:minmax(0,1fr)}
+.flow{flex-direction:column;align-items:stretch;border-radius:32px;padding:12px}
+.link{width:0;height:20px;border-top:0;border-left:3px dotted #D8D5CB;margin-left:42px}
+.chat{gap:24px}
+.aud{padding:30px 24px;min-height:0;border-radius:30px}
+.aud h3{font-size:28px}
+.sos-box{grid-template-columns:minmax(0,1fr);padding:40px 24px;border-radius:32px;gap:32px}
+.sos-box h2{font-size:32px}
+.sos-box .btns .pill{width:100%}
+.opt{min-height:60px;font-size:16px;padding-left:20px}
+.people{grid-template-columns:minmax(0,1fr);gap:32px}
+.photo{padding:40px;font-size:14px}
+.say{font-size:24px}
+.final{padding:64px 0}
+.final-box{flex-direction:column;align-items:flex-start;padding:44px 24px;border-radius:32px}
+.final-box h2{font-size:34px}
+.final-box .pill{width:100%}
+.footer{border-radius:32px 32px 0 0}
+.f-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.f-grid > div:first-child{grid-column:1 / -1}
+}
+</style>
+</helmet>
+<div class="atc" style="width: 100%; min-height: 100vh">
+
+<header class="header">
+<div class="wrap">
+<a class="logo" href="#"><i aria-hidden="true"></i><span style="margin-left: 8px">ATC Seguros</span></a>
+<nav class="nav" aria-label="Principal">
+<a href="#voce">Para você</a>
+<a href="#empresa">Para sua empresa</a>
+<a href="#sobre">Quem somos</a>
+<a class="sos" href="#sinistro">Sinistro 24h</a>
+</nav>
+<a class="pill pill-dark" href="#cotar">Quero cotar</a>
+<button class="burger" type="button" aria-label="Abrir menu">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg>
+</button>
+</div>
+</header>
+
+<section class="hero" id="cotar">
+<div class="wrap">
+<dc-import name="Simulador" hint-size="100%,680px"></dc-import>
+</div>
+</section>
+
+<section class="insurers" aria-label="Seguradoras parceiras">
+<div class="wrap">
+<p>A gente compara nas maiores seguradoras do país pra você.</p>
+<div class="logos">
+<div class="lg">[LOGO]</div>
+<div class="lg">[LOGO]</div>
+<div class="lg">[LOGO]</div>
+<div class="lg">[LOGO]</div>
+<div class="lg">[LOGO]</div>
+<div class="lg">[LOGO]</div>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<h2 class="title">Seguro tem palavra difícil. A gente traduz.</h2>
+<p class="sub">Tudo o que estiver na sua apólice, a gente explica antes de você assinar. Com as nossas palavras, não com as da seguradora.</p>
+<div class="chat">
+<div class="thread">
+<p class="q">O que é franquia?</p>
+<p class="a"><b>ATC</b>É o valor que você paga quando usa o seguro do carro. O resto do conserto, a seguradora paga.</p>
+</div>
+<div class="thread">
+<p class="q">E prêmio, é algo que eu ganho?</p>
+<p class="a"><b>ATC</b>Não, é só o preço do seguro. O valor que você paga pra ficar protegido.</p>
+</div>
+<div class="thread">
+<p class="q">Sinistro é coisa grave?</p>
+<p class="a"><b>ATC</b>É o nome técnico pra "aconteceu algo": uma batida, um roubo, um cano estourado. Aí é com a gente.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="block" id="voce">
+<div class="wrap">
+<h2 class="title">Mais de 50 seguros. Um jeito só de atender.</h2>
+<div class="who">
+<div class="aud aud-y">
+<div class="circle" aria-hidden="true"></div>
+<h3>Pra você e sua família</h3>
+<p class="d">O carro de todo dia, a casa, a saúde e o futuro de quem você ama.</p>
+<div class="chips">
+<a class="chip" href="#">Automóvel</a>
+<a class="chip" href="#">Moto</a>
+<a class="chip" href="#">Residencial</a>
+<a class="chip" href="#">Vida</a>
+<a class="chip" href="#">Plano de saúde</a>
+<a class="chip" href="#">Odontológico</a>
+<a class="chip" href="#">Viagem</a>
+<a class="chip" href="#">Saúde PET</a>
+<a class="chip" href="#">Previdência</a>
+<a class="chip" href="#">Consórcio</a>
+</div>
+<a class="more" href="#">Ver todos os seguros pra você</a>
+</div>
+<div class="aud aud-w" id="empresa">
+<div class="circle" aria-hidden="true"></div>
+<h3>Pra sua empresa</h3>
+<p class="d">Patrimônio, equipe, frota e contratos, com alguém que entende o seu negócio.</p>
+<div class="chips">
+<a class="chip" href="#">Empresarial</a>
+<a class="chip" href="#">Frota</a>
+<a class="chip" href="#">Vida em grupo</a>
+<a class="chip" href="#">Saúde empresa</a>
+<a class="chip" href="#">Responsabilidade civil</a>
+<a class="chip" href="#">D&amp;O</a>
+<a class="chip" href="#">Seguro garantia</a>
+<a class="chip" href="#">Cargas</a>
+<a class="chip" href="#">Agronegócio</a>
+<a class="chip" href="#">Riscos digitais</a>
+</div>
+<a class="more" href="#">Ver todos os seguros pra empresas</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="block" id="sinistro">
+<div class="wrap">
+<div class="sos-box">
+<div class="sun" aria-hidden="true"></div>
+<div>
+<h2>Aconteceu algo? Respira. A gente resolve com você.</h2>
+<p>Você não vai ficar ouvindo musiquinha numa central. Liga ou chama a ATC, e a gente cuida de tudo com a seguradora.</p>
+<div class="btns">
+<a class="pill pill-yellow" href="#">Ligar 24h: [TELEFONE]</a>
+<a class="pill pill-white" href="#">Chamar no WhatsApp</a>
+</div>
+</div>
+<div class="opts">
+<a class="opt" href="#">Bati o carro ou fui roubado<span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a>
+<a class="opt" href="#">Deu problema na minha casa<span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a>
+<a class="opt" href="#">Preciso usar saúde ou vida<span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a>
+<a class="opt" href="#">Aconteceu na minha empresa<span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<h2 class="title">Do primeiro oi até a apólice.</h2>
+<ol class="flow" style="list-style: none; margin-bottom: 0">
+<li class="fstep"><span class="n">1</span><div><b>Você conta o que quer</b><span class="t">No simulador, no WhatsApp ou ligando.</span></div></li>
+<li class="link" aria-hidden="true"></li>
+<li class="fstep"><span class="n">2</span><div><b>A gente compara e explica</b><span class="t">Seguradoras lado a lado, sem enrolação.</span></div></li>
+<li class="link" aria-hidden="true"></li>
+<li class="fstep"><span class="n">3</span><div><b>Você escolhe com calma</b><span class="t">E a ATC segue do seu lado depois.</span></div></li>
+</ol>
+</div>
+</section>
+
+<section class="block" id="sobre">
+<div class="wrap">
+<div class="people">
+<div class="photo">[FOTO REAL DE QUEM ATENDE: no escritório, sorrindo, luz natural]<span class="badge">Desde 1998</span></div>
+<div>
+<p class="say">“A ATC cuida de famílias e empresas de Goiânia há quase 30 anos. O cuidado continua o mesmo. O jeito de explicar ficou bem mais simples.”</p>
+<p class="sign"><b>[NOME]</b>, [CARGO] da ATC Seguros</p>
+<div class="reviews">
+<p class="rv">[DEPOIMENTO REAL DE CLIENTE, com nome e bairro]</p>
+<p class="rv">[DEPOIMENTO REAL DE CLIENTE]</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="final">
+<div class="wrap">
+<div class="final-box">
+<div class="c" aria-hidden="true"></div>
+<div style="position: relative">
+<h2>Bora achar o seguro certo pra você?</h2>
+<p>Sem compromisso e sem letra miúda.</p>
+</div>
+<a class="pill pill-dark" href="#cotar">Montar minha proteção</a>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="wrap">
+<div class="f-grid">
+<div>
+<a class="logo" href="#"><i aria-hidden="true"></i><span style="margin-left: 8px">ATC Seguros</span></a>
+<p style="margin-top: 18px; line-height: 1.6; max-width: 320px">[ENDEREÇO], Goiânia (GO)<br>[TELEFONE], [HORÁRIO]</p>
+</div>
+<div><h3>Pra você</h3><ul><li><a href="#">Automóvel</a></li><li><a href="#">Residencial</a></li><li><a href="#">Vida</a></li><li><a href="#">Plano de saúde</a></li></ul></div>
+<div><h3>Pra empresas</h3><ul><li><a href="#">Empresarial</a></li><li><a href="#">Frota</a></li><li><a href="#">Vida em grupo</a></li><li><a href="#">Seguro garantia</a></li></ul></div>
+<div><h3>ATC</h3><ul><li><a href="#">Quem somos</a></li><li><a href="#">Sinistro 24h</a></li><li><a href="#">Todos os seguros</a></li><li><a href="#">Privacidade</a></li></ul></div>
+</div>
+<div class="legal">
+<span>ATC Administradora e Corretora LTDA, CNPJ [CNPJ], SUSEP nº [NÚMERO SUSEP]</span>
+<span>© 2026 ATC Seguros</span>
+</div>
+</div>
+</footer>
+
+<a class="wa" href="#" aria-label="Falar no WhatsApp">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.3A8.5 8.5 0 1 1 21 12z"></path></svg>
+</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4700}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>
